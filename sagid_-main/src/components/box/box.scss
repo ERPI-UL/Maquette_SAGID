@@ -1,0 +1,58 @@
+@use '../../scss/abstracts/' as *;
+
+.box{
+    padding: 20px 30px;
+    margin-bottom: 10px;
+    border-radius: $borderRadius;
+    background-color: $mainBg;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+    text-align: center;
+    justify-content: center;
+
+    &-purple {
+        background-color: $purple;
+        color: $white;
+        
+    }
+
+    &-fullheight {
+        height: 100%;
+
+        @include tablet {
+            height: calc(100% - $mobileSpacing);
+        }
+    }
+    &-small{
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+        justify-content: center;
+    }
+}
+
+.box_indicateur{
+    padding: 20px 30px;
+    margin-bottom: 10px;
+    border-radius: $borderRadius;
+    background-color: $mainBg;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+    text-align: center;
+    justify-content: center;
+
+    &-purple {
+        background-color: $purple;
+        color: $white;
+    }
+
+    &-fullheight {
+        height: calc(100% - $spacing);
+
+        @include tablet {
+            height: calc(100% - $mobileSpacing);
+        }
+    }
+}

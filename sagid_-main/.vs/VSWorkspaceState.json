@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\public",
+    "\\src",
+    "\\src\\components",
+    "\\src\\components\\economique",
+    "\\src\\components\\summary-box",
+    "\\src\\constants",
+    "\\src\\form",
+    "\\src\\layout",
+    "\\src\\pages"
+  ],
+  "SelectedNode": "\\src\\form\\ChoixBord.jsx",
+  "PreviewInSolutionExplorer": false
+}

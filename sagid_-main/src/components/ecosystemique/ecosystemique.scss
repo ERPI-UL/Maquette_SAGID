@@ -1,0 +1,31 @@
+.ecosystemique{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    color: #93c47d;
+}
+
+.tooltip-container {
+    display: inline-block; /* Make the container inline-block to fit content */
+    position: relative; /* Position relative for positioning the tooltip */
+    color: 'black'  !important
+  }
+  
+  .tooltip {
+    position: inline-block;
+    top: 100%; /* Position below the h3 element */
+    left: 0; /* Align with the left edge of the container */
+    display: none; /* Initially, hide the tooltip */
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 5px;
+  }
+  
+  .tooltip-container:hover .tooltip {
+    display: block; /* Display the tooltip when hovering */
+  }
+  
