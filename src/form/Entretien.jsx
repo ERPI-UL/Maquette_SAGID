@@ -1028,16 +1028,8 @@ function handleButtonClick() {
       </StyledFormControl>
 
       <h3 component="legend">Type de fauchage</h3>
-          <div className="row">
-              <div className="col6">
-                  <FormLabel component="legend">Fauchage classique (en %)</FormLabel>
-              </div>
-              <div className="col6">
-                Hello
-              </div>
-          </div>
+     <FormLabel component="legend">Fauchage avec collecte (en %)</FormLabel>
           <SliderTextFieldForm id="slider1" onChange={(event, newValue) => handleSliderChange("slider1", newValue)} currentData={currentData} />
-
      <FormLabel component="legend">Fauchage avec collecte (en %)</FormLabel>
           <SliderTextFieldForm id="slider2"  onChange={(event, newValue) => handleSliderChange("slider2", newValue)} currentData={currentData} />
       <FormLabel component="legend">Fauchage en damier (en %)</FormLabel>
@@ -1046,26 +1038,26 @@ function handleButtonClick() {
       <h3>Valorisation de l'herbe</h3>
 
       <FormLabel component="legend">Méthanisation (en %)</FormLabel>
-          <SliderTextFieldForm id="slider4" onChange={handleSliderChange} currentData={currentData} />
-
+          <SliderTextFieldForm id="slider4" onChange={(event, newValue) => handleSliderChange("slider4", newValue)} currentData={currentData} />
       <FormLabel component="legend">Compostage (en %)</FormLabel>
-          <SliderTextFieldForm id="slider5" onChange={handleSliderChange} currentData={currentData} />
-          <Button
-              variant="contained"
-              color="primary"
-              onClick={() => handleButtonClick()}
-          >
-              Effectuer une comparaison
-          </Button>
-          <Button
-              variant="contained"
-              color="primary"
-              onClick={() => handleButtonClickStop()}
-          >
-              Arrêter la comparaison
-          </Button>
-         
-          </div>
+          <SliderTextFieldForm id="slider5" onChange={(event, newValue) => handleSliderChange("slider5", newValue)} currentData={currentData} />
+
+    <Button
+        variant="contained"
+        color="primary"
+        onClick={() => handleButtonClick()}
+    >
+        Effectuer une comparaison
+    </Button>
+    <Button
+        variant="contained"
+        color="primary"
+        onClick={() => handleButtonClickStop()}
+    >
+        Arrêter la comparaison
+    </Button>
+    
+    </div>
 
   );
 };

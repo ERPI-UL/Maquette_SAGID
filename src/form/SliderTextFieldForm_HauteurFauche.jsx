@@ -38,8 +38,8 @@ const StyledFormControl = styled(FormControl)({
 
 const SliderTextFieldForm_HauteurFauche = ({ id, onChange, currentData }) => {
 
-    const [sliderValue, setSliderValue] = useState(currentData.planEntretien[4].parametres[4]);
-    const [textFieldValue, setTextFieldValue] = useState(currentData.planEntretien[4].parametres[4]);
+    const [sliderValue, setSliderValue] = useState(currentData.planEntretien[4].parametres[4].value);
+    const [textFieldValue, setTextFieldValue] = useState(currentData.planEntretien[4].parametres[4].value);
     
     const handleSliderChange = (event, newValue) => {
         setSliderValue(newValue);
@@ -48,8 +48,9 @@ const SliderTextFieldForm_HauteurFauche = ({ id, onChange, currentData }) => {
     };
 
     const handleTextFieldChange = (event) => {
-        setTextFieldValue(event.target.value);
-        const parsedValue = parseInt(event.target.value);
+        let parsedValue = parseInt(event.target.value);
+        parsedValue = parsedValue < 0 ? 0 : parsedValue;
+        setTextFieldValue(parsedValue);
         if (!isNaN(parsedValue)) {
             setSliderValue(parsedValue);
             onChange(id, parsedValue);

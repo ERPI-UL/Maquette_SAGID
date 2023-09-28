@@ -45,25 +45,27 @@ const SliderTextFieldForm = ({ id, onChange, currentData }) => {
     let initialTextFieldValue = "0";
 
     const [sliderValues, setSliderValues] = useState({
-        slider1: currentData.planEntretien[4].parametres[0],
-        slider2: currentData.planEntretien[4].parametres[1],
-        slider3: currentData.planEntretien[4].parametres[2],
+        slider1: currentData.planEntretien[4].parametres[0].value,
+        slider2: currentData.planEntretien[4].parametres[1].value,
+        slider3: currentData.planEntretien[4].parametres[2].value,
+        slider4: currentData.planEntretien[4].parametres[5].value,
+        slider5: currentData.planEntretien[4].parametres[6].value,
     });
     
     if (id === "slider1") {
-        initialSliderValue1 = currentData.planEntretien[4].parametres[0];
+        initialSliderValue1 = currentData.planEntretien[4].parametres[0].value;
         initialTextFieldValue = initialSliderValue1.toString();
     } else if (id === "slider2") {
-        initialSliderValue2 = currentData.planEntretien[4].parametres[1];;
+        initialSliderValue2 = currentData.planEntretien[4].parametres[1].value;
         initialTextFieldValue = initialSliderValue2.toString();
     } else if (id === "slider3") {
-        initialSliderValue3 = currentData.planEntretien[4].parametres[2];;
+        initialSliderValue3 = currentData.planEntretien[4].parametres[2].value;
         initialTextFieldValue = initialSliderValue3.toString();
     } else if (id === "slider4") {
-        initialSliderValue4 = currentData.planEntretien[4].parametres[5];;
+        initialSliderValue4 = currentData.planEntretien[4].parametres[5].value;
         initialTextFieldValue = initialSliderValue4.toString();
     } else if (id === "slider5") {
-        initialSliderValue5 = currentData.planEntretien[4].parametres[6];;
+        initialSliderValue5 = currentData.planEntretien[4].parametres[6].value;
         initialTextFieldValue = initialSliderValue5.toString();
     }
 
@@ -75,91 +77,114 @@ const SliderTextFieldForm = ({ id, onChange, currentData }) => {
 
         // Copiez les valeurs actuelles
         const updatedValues = { ...sliderValues };
-        let slider1Value, slider2Value, slider3Value = 0;
+        // let slider1Value, slider2Value, slider3Value, slider4Value, slider5Value = 0;
 
         const newCurrentData = { ...currentData };
 
-        if (id === "slider1") {
+        updatedValues[id] = newValue;
+        newCurrentData.planEntretien[4].parametres[0].value = updatedValues.slider1;
+        newCurrentData.planEntretien[4].parametres[1].value = updatedValues.slider2;
+        newCurrentData.planEntretien[4].parametres[2].value = updatedValues.slider3;
+        newCurrentData.planEntretien[4].parametres[5].value = updatedValues.slider4;
+        newCurrentData.planEntretien[4].parametres[6].value = updatedValues.slider5;
 
-            slider1Value = newValue;
-            slider2Value = updatedValues.slider2;
-            slider3Value = updatedValues.slider3;
-            console.log(slider1Value, slider2Value, slider3Value);
-            if (slider2Value > slider3Value) {
-                console.log("slider2>slider3");
-                slider2Value = 100 - slider1Value - slider3Value;
-            } else {
-                console.log("slider3>slider2");
-               slider3Value = 100 - slider1Value - slider2Value;
-            }
-            updatedValues.slider1 = slider1Value;
-            updatedValues.slider2 = slider2Value;
-            updatedValues.slider3 = slider3Value;
+        // if (id === "slider1") {
+
+        //     slider1Value = newValue;
+        //     slider2Value = updatedValues.slider2;
+        //     slider3Value = updatedValues.slider3;
+        //     console.log(slider1Value, slider2Value, slider3Value);
+        //     if (slider2Value > slider3Value) {
+        //         console.log("slider2>slider3");
+        //         slider2Value = 100 - slider1Value - slider3Value;
+        //     } else {
+        //         console.log("slider3>slider2");
+        //        slider3Value = 100 - slider1Value - slider2Value;
+        //     }
+        //     updatedValues.slider1 = slider1Value;
+        //     updatedValues.slider2 = slider2Value;
+        //     updatedValues.slider3 = slider3Value;
             
 
-            newCurrentData.planEntretien[4].parametres[0] = updatedValues.slider1;
-            newCurrentData.planEntretien[4].parametres[1] = updatedValues.slider2;
-            newCurrentData.planEntretien[4].parametres[2] = updatedValues.slider3;
-        }  else if (id === "slider2") {
+        //     newCurrentData.planEntretien[4].parametres[0].value = updatedValues.slider1;
+        //     newCurrentData.planEntretien[4].parametres[1].value = updatedValues.slider2;
+        //     newCurrentData.planEntretien[4].parametres[2].value = updatedValues.slider3;
+        //     newCurrentData.planEntretien[4].parametres[5].value = updatedValues.slider4;
+        //     newCurrentData.planEntretien[4].parametres[6].value = updatedValues.slider5;
+        // }  else if (id === "slider2") {
 
-            slider2Value = newValue;
-            slider1Value = updatedValues.slider1;
-            slider3Value = updatedValues.slider3;
+        //     slider2Value = newValue;
+        //     slider1Value = updatedValues.slider1;
+        //     slider3Value = updatedValues.slider3;
 
-            if (slider1Value > slider3Value) {
-                slider1Value = 100 - slider2Value - slider3Value;
-            } else if (slider3Value > slider2Value - 1) {
-                slider3Value = 100 - slider1Value - slider2Value;
-            }
-            updatedValues.slider1 = slider1Value;
-            updatedValues.slider2 = slider2Value;
-            updatedValues.slider3 = slider3Value;
-            console.log(updatedValues.slider1, updatedValues.slider2, updatedValues.slider3);
+        //     if (slider1Value > slider3Value) {
+        //         slider1Value = 100 - slider2Value - slider3Value;
+        //     } else if (slider3Value > slider2Value - 1) {
+        //         slider3Value = 100 - slider1Value - slider2Value;
+        //     }
+        //     updatedValues.slider1 = slider1Value;
+        //     updatedValues.slider2 = slider2Value;
+        //     updatedValues.slider3 = slider3Value;
+        //     console.log(updatedValues.slider1, updatedValues.slider2, updatedValues.slider3);
 
-            newCurrentData.planEntretien[4].parametres[0] = updatedValues.slider1;
-            newCurrentData.planEntretien[4].parametres[1] = updatedValues.slider2;
-            newCurrentData.planEntretien[4].parametres[2] = updatedValues.slider3;
-        } else if (id === "slider3") {
-            console.log("PROBLEME");
-            slider3Value = newValue;
-            slider1Value = updatedValues.slider1;
-            slider2Value = updatedValues.slider2;
+        //     newCurrentData.planEntretien[4].parametres[0].value = updatedValues.slider1;
+        //     newCurrentData.planEntretien[4].parametres[1].value = updatedValues.slider2;
+        //     newCurrentData.planEntretien[4].parametres[2].value = updatedValues.slider3;
+        //     newCurrentData.planEntretien[4].parametres[5].value = updatedValues.slider4;
+        //     newCurrentData.planEntretien[4].parametres[6].value = updatedValues.slider5;
+        // } else if (id === "slider3") {
+        //     console.log("PROBLEME");
+        //     slider3Value = newValue;
+        //     slider1Value = updatedValues.slider1;
+        //     slider2Value = updatedValues.slider2;
 
-            if (slider1Value > slider2Value) {
-                slider1Value = 100 - slider3Value - slider2Value;
-            } else if (slider2Value > slider1Value - 1) {
-                slider2Value = 100 - slider1Value - slider3Value;
-            }
-            updatedValues.slider1 = slider1Value;
-            updatedValues.slider2 = slider2Value;
-            updatedValues.slider3 = slider3Value;
-            console.log(updatedValues.slider1, updatedValues.slider2, updatedValues.slider3);
+        //     if (slider1Value > slider2Value) {
+        //         slider1Value = 100 - slider3Value - slider2Value;
+        //     } else if (slider2Value > slider1Value - 1) {
+        //         slider2Value = 100 - slider1Value - slider3Value;
+        //     }
+        //     updatedValues.slider1 = slider1Value;
+        //     updatedValues.slider2 = slider2Value;
+        //     updatedValues.slider3 = slider3Value;
+        //     console.log(updatedValues.slider1, updatedValues.slider2, updatedValues.slider3);
 
-            newCurrentData.planEntretien[4].parametres[0] = updatedValues.slider1;
-            newCurrentData.planEntretien[4].parametres[1] = updatedValues.slider2;
-            newCurrentData.planEntretien[4].parametres[2] = updatedValues.slider3;
-        }
+        //     newCurrentData.planEntretien[4].parametres[0].value = updatedValues.slider1;
+        //     newCurrentData.planEntretien[4].parametres[1].value = updatedValues.slider2;
+        //     newCurrentData.planEntretien[4].parametres[2].value = updatedValues.slider3;
+        //     newCurrentData.planEntretien[4].parametres[5].value = updatedValues.slider4;
+        //     newCurrentData.planEntretien[4].parametres[6].value = updatedValues.slider5;
+        // } else if (id === "slider4") {
+        //   newCurrentData.planEntretien[4].parametres[5].value = newValue;
+        // } else if (id === "slider5") {
+        //   newCurrentData.planEntretien[4].parametres[6].value = newValue;
+        // }
         
-        // Mettez à jour les valeurs des sliders
+        // // Mettez ï¿½ jour les valeurs des sliders
         sliderValues.slider1 = updatedValues.slider1;
         sliderValues.slider2 = updatedValues.slider2;
-        sliderValues.slider3 = updatedValues.slider3
-        console.log("Slider : ")
-        console.log(sliderValues)
+        sliderValues.slider3 = updatedValues.slider3;
+        sliderValues.slider4 = updatedValues.slider4;
+        sliderValues.slider5 = updatedValues.slider5;
+        // console.log("Slider : ")
+        // console.log(sliderValues)
         
         //const updatedValues = { ...sliderValues };
         setTextFieldValue(newValue);
         // Appelez la fonction de rappel pour informer le composant parent des changements
-        onChange(id, newValue);
-        }, 100);
+        // onChange(id, newValue);
+        }, 10);
  
 
   const handleTextFieldChange = (event) => {
-    setTextFieldValue(event.target.value);
-    const parsedValue = parseInt(event.target.value);
+    let parsedValue = parseInt(event.target.value);
+    parsedValue = parsedValue < 0 ? 0 : parsedValue;
+    setTextFieldValue(parsedValue);
+    let newValues = sliderValues;
+    newValues[id] = parsedValue;
+    console.log("newValues",newValues);
     if (!isNaN(parsedValue)) {
-      setSliderValues(parsedValue);
-      onChange(id, parsedValue);
+      setSliderValues(newValues);
+      // onChange(id, parsedValue);
     }
   };
 
