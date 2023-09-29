@@ -40,7 +40,6 @@ const StyledFormControl = styled(FormControl)({
 
 const SliderTextFieldForm = ({ id, onChange, currentData }) => {
 
-    let initialSliderValue1, initialSliderValue2, initialSliderValue3, initialSliderValue4, initialSliderValue5  = 0;
     let initialTextFieldValue = "0";
 
     const [sliderValues, setSliderValues] = useState({
@@ -52,20 +51,15 @@ const SliderTextFieldForm = ({ id, onChange, currentData }) => {
     });
     
     if (id === "slider1") {
-        initialSliderValue1 = currentData.planEntretien[4].parametres[0].value;
-        initialTextFieldValue = initialSliderValue1.toString();
+        initialTextFieldValue = currentData.planEntretien[4].parametres[0].value;
     } else if (id === "slider2") {
-        initialSliderValue2 = currentData.planEntretien[4].parametres[1].value;
-        initialTextFieldValue = initialSliderValue2.toString();
+        initialTextFieldValue = currentData.planEntretien[4].parametres[1].value;
     } else if (id === "slider3") {
-        initialSliderValue3 = currentData.planEntretien[4].parametres[2].value;
-        initialTextFieldValue = initialSliderValue3.toString();
+        initialTextFieldValue = currentData.planEntretien[4].parametres[2].value;
     } else if (id === "slider4") {
-        initialSliderValue4 = currentData.planEntretien[4].parametres[5].value;
-        initialTextFieldValue = initialSliderValue4.toString();
+        initialTextFieldValue = currentData.planEntretien[4].parametres[5].value;
     } else if (id === "slider5") {
-        initialSliderValue5 = currentData.planEntretien[4].parametres[6].value;
-        initialTextFieldValue = initialSliderValue5.toString();
+        initialTextFieldValue = currentData.planEntretien[4].parametres[6].value;
     }
 
     const [textFieldValue, setTextFieldValue] = useState(initialTextFieldValue);
@@ -175,7 +169,7 @@ const SliderTextFieldForm = ({ id, onChange, currentData }) => {
     parsedValue = parsedValue < minValue ? minValue : parsedValue;
     parsedValue = parsedValue > maxValue ? maxValue : parsedValue;
     setTextFieldValue(parsedValue);
-    let newValues = sliderValues;
+    let newValues = {...sliderValues};
     newValues[id] = parsedValue;
     if (!isNaN(parsedValue)) {
       setSliderValues(newValues);
