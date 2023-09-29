@@ -72,6 +72,9 @@ const SliderTextFieldForm = ({ id, onChange, currentData }) => {
     }
 
     const [textFieldValue, setTextFieldValue] = useState(initialTextFieldValue);
+    const maxValue = 100;
+    const minValue = 0;
+    const stepValue = 1;
 
     const handleSliderChange = _.debounce((id, newValue) => {
 
@@ -171,9 +174,9 @@ const SliderTextFieldForm = ({ id, onChange, currentData }) => {
  
 
   const handleTextFieldChange = (event) => {
-    console.log("event", event);
     let parsedValue = parseInt(event.target.value);
-    parsedValue = parsedValue < 0 ? 0 : parsedValue;
+    parsedValue = parsedValue < minValue ? minValue : parsedValue;
+    parsedValue = parsedValue > maxValue ? maxValue : parsedValue;
     setTextFieldValue(parsedValue);
     let newValues = sliderValues;
     newValues[id] = parsedValue;
@@ -200,9 +203,9 @@ const SliderTextFieldForm = ({ id, onChange, currentData }) => {
             <StyledSlider
               value={sliderValues[id]}  
               onChange={(event, newValue) => handleSliderChange(id, newValue)}  
-              min={0}
-              max={100}
-              step={1}
+              min={minValue}
+              max={maxValue}
+              step={stepValue}
             />
           </StyledFormControl>
         </div>

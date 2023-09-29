@@ -42,6 +42,9 @@ const SliderTextFieldForm_HauteurFauche = ({ id, onChange, currentData }) => {
 
     const [sliderValue, setSliderValue] = useState(currentData.planEntretien[4].parametres[4].value);
     const [textFieldValue, setTextFieldValue] = useState(currentData.planEntretien[4].parametres[4].value);
+    const maxValue = 15;
+    const minValue = 0;
+    const stepValue = 1;
     
     const handleSliderChange = (event, newValue) => {
         setSliderValue(newValue);
@@ -51,7 +54,8 @@ const SliderTextFieldForm_HauteurFauche = ({ id, onChange, currentData }) => {
 
     const handleTextFieldChange = (event) => {
         let parsedValue = parseInt(event.target.value);
-        parsedValue = parsedValue < 0 ? 0 : parsedValue;
+        parsedValue = parsedValue < minValue ? minValue : parsedValue;
+        parsedValue = parsedValue > maxValue ? maxValue : parsedValue;
         setTextFieldValue(parsedValue);
         if (!isNaN(parsedValue)) {
             setSliderValue(parsedValue);
@@ -76,9 +80,9 @@ const SliderTextFieldForm_HauteurFauche = ({ id, onChange, currentData }) => {
                     <StyledSlider
                         value={sliderValue}
                         onChange={handleSliderChange}
-                        min={0}
-                        max={15}
-                        step={1}
+                        min={minValue}
+                        max={maxValue}
+                        step={stepValue}
                     />
                 </StyledFormControl>
             </div>
