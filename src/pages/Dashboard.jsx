@@ -1,15 +1,10 @@
 // Import React and necessary components and libraries
 import React, { useState } from "react";
-import { Bar } from "react-chartjs-2";
 import Box from "../components/box/Box";
 import DashboardWrapper, {
   DashboardWrapperMain,
   DashboardWrapperRight,
 } from "../components/dashboard-wrapper/DashboardWrapper";
-import SummaryBox, {
-  SummaryBoxSpecial,
-} from "../components/summary-box/SummaryBox";
-import { colors, data } from "../constants";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -25,7 +20,6 @@ import GESSmallCard from "../components/ges/GESSmallCard";
 import EcoNomiqueSmallCard from "../components/economique/EcoNomiqueSmallCard";
 import Sidebar from "./Sidebar";
 import EcoNomiqueMainCard from "../components/economique/EcoNomiqueMainCard";
-import { Button } from "@mui/material";
 import EcoSystSmallCard from "../components/ecosystemique/EcoSystSmallCard";
 import GESMainCard from "../components/ges/GESMainCard";
 
@@ -44,10 +38,6 @@ import { Tab } from "@material-ui/core";
 
 // Import Emotion styled components for custom styling
 import styled from "@emotion/styled";
-
-// Import JSON data
-import jsonData from "../constants/data.json"; // Adjust the path if needed
-import { useEffect } from "react";
 
 // Register Chart.js components
 ChartJS.register(

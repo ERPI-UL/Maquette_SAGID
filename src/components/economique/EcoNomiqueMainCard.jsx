@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { SummaryBoxSpecialEconomique,  SummaryBoxSpecialEconomique_2} from "../summary-box/SummaryBox";
+import { SummaryBoxSpecialEconomique,  SummaryBoxSpecialEconomique2} from "../summary-box/SummaryBox";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEuroSign } from "@fortawesome/free-solid-svg-icons";
 import { Tabs, Tab } from "@mui/material";
@@ -68,7 +68,7 @@ const EcoSystMainCard = ({ currentData, visible }) => {
             )}
             {activeTab === 1 && (
               // Render SummaryBoxSpecialEconomique_2 if the second tab is active
-              <SummaryBoxSpecialEconomique_2
+              <SummaryBoxSpecialEconomique2
                 item={currentData.indicateurs_economiques}
                 widthGiven={"500px"}
               />

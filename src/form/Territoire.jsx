@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import SliderTextFieldForm from './SliderTextFieldForm';
 import ChoixBord from './ChoixBord';
 
@@ -32,13 +32,10 @@ const Territoire = ({currentData, setCurrentData }) => {
       e.value_after = randomValue;
     });
 
-    let sum=0;
-
     newCurrentData.indicateurs_ges.forEach(e => {
       const randomValue = Math.floor(Math.random() * 1000) + 1;
       e.value = e.value_after;
       e.value_after = randomValue;
-      sum+=e.value_after;
     });
 
     setCurrentData(newCurrentData);

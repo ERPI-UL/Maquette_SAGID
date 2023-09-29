@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { styled, FormControl, InputLabel, MenuItem, Select, Button, FormLabel } from '@mui/material';
+import { styled, FormControl, MenuItem, Select, Button, FormLabel } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { data } from '../constants';
 
 import './form.scss';
-import ChoixPlan from './ChoixPlan.jsx';
 
 const StyledFormControl = styled('div')(({ theme }) => ({
   display: 'flex',
@@ -65,7 +64,6 @@ function ChoixTerri() {
         // déclaration des variables
         let newSelectedDepartment = "";
         let newSelectedRegion = "";
-        let tailleReseau = 0;
 
         // on récupère la région et le département sélectionné par l'utilisateur
         newSelectedDepartment = event.target.value;

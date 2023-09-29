@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { FormControl, FormControlLabel, Radio, RadioGroup, Select, MenuItem, Button } from '@mui/material';
+import { FormControl, FormControlLabel, Radio, RadioGroup, Button } from '@mui/material';
 import FormLabel from '@mui/material/FormLabel';
 
 import './form.scss';
 import SliderTextFieldForm from './SliderTextFieldForm';
-import SliderTextFieldForm_HauteurFauche from './SliderTextFieldForm_HauteurFauche';
-import _, { set } from 'lodash';
+import SliderTextFieldFormHauteurFauche from './SliderTextFieldFormHauteurFauche';
+import _ from 'lodash';
 
 import { styled } from '@mui/material/styles';
 import Services from "../services/services.js"
@@ -130,7 +130,7 @@ const Entretien = ({ currentData, setCurrentData, setVisible }) => {
                 </StyledRadioGroup>
 
                 <FormLabel component="legend">Hauteur de fauche (cm)</FormLabel>
-                <SliderTextFieldForm_HauteurFauche id="slider6" onChange={modifHauteurFauche} currentData={currentData} />
+                <SliderTextFieldFormHauteurFauche id="slider6" onChange={modifHauteurFauche} currentData={currentData} />
 
             </StyledFormControl>
 

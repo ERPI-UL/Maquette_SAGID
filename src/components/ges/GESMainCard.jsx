@@ -1,5 +1,5 @@
 import React from "react";
-import SummaryBox, { SummaryBoxIndicateurs, SummaryBoxSpecialGES, SummaryBoxNotesGes } from "../summary-box/SummaryBox";
+import { SummaryBoxSpecialGES, SummaryBoxNotesGes } from "../summary-box/SummaryBox";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSmog } from '@fortawesome/free-solid-svg-icons'
 

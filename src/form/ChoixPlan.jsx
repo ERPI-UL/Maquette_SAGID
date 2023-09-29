@@ -95,9 +95,10 @@ const ChoixPlan = ({ currentData, setCurrentData}) => {
         let frequenceFauche = 0;
         let hauteurFauche = 0;
         let methanisation, compostage = 0;
-        let fauchageDiff, luttePlantesInv = "";
+        let fauchageDiff = 'non';
+        // let luttePlantesInv = "non";
         let largeursPasse1, largeursPasse2, largeursPasse3 = 0;
-        let periodePasse1, periodePasse2, periodePasse3 = 0;
+        // let periodePasse1, periodePasse2, periodePasse3 = 0;
 
         // Extraction des valeurs des variables pour le plan d'entretien choisi
         currentData.planEntretien.forEach((plan1) => {
@@ -171,7 +172,7 @@ const ChoixPlan = ({ currentData, setCurrentData}) => {
                 const luttePlantesInvParam = plan1.parametres.find((parametre) => parametre.nom === "Lutte contre les plantes invasives");
                 // On extrait la valeur du paramètre
                 if (luttePlantesInvParam) {
-                    luttePlantesInv = luttePlantesInvParam.value;
+                    // luttePlantesInv = luttePlantesInvParam.value;
                     currentData.planEntretien[4].parametres[8] = luttePlantesInvParam.value;
                 }
             // Nombre de largeurs d'outils 1ère passe
@@ -203,7 +204,7 @@ const ChoixPlan = ({ currentData, setCurrentData}) => {
                 const periodePasse1Param = plan1.parametres.find((parametre) => parametre.nom === "Période 1ère fauche");
                 // On extrait la valeur du paramètre
                 if (periodePasse1Param) {
-                    periodePasse1 = periodePasse1Param.value;
+                    // periodePasse1 = periodePasse1Param.value;
                     currentData.planEntretien[4].parametres[12] = periodePasse1Param.value;
                 }
                 // Période de la 2ème passe
@@ -211,7 +212,7 @@ const ChoixPlan = ({ currentData, setCurrentData}) => {
                 const periodePasse2Param = plan1.parametres.find((parametre) => parametre.nom === "Période 2ème fauche");
                 // On extrait la valeur du paramètre
                 if (periodePasse2Param) {
-                    periodePasse2 = periodePasse2Param.value;
+                    // periodePasse2 = periodePasse2Param.value;
                     currentData.planEntretien[4].parametres[13] = periodePasse2Param.value;
                 }
                 // Période de la 3ème passe
@@ -219,7 +220,7 @@ const ChoixPlan = ({ currentData, setCurrentData}) => {
                 const periodePasse3Param = plan1.parametres.find((parametre) => parametre.nom === "Période 3ème fauche");
                 // On extrait la valeur du paramètre
                 if (periodePasse3Param) {
-                    periodePasse3 = periodePasse3Param.value;
+                    // periodePasse3 = periodePasse3Param.value;
                     currentData.planEntretien[4].parametres[14] = periodePasse3Param.value;
                 }
             }
@@ -240,33 +241,34 @@ const ChoixPlan = ({ currentData, setCurrentData}) => {
         let quantiteEngraisProduite = 0;
         //let benefValo, benefMethanisation, benefCompostage = 0;
         //let coutMethanisation, coutCompostage, coutValo = 0;
-        let gainVenteHerbe = 0;
+        // let gainVenteHerbe = 0;
         // Constantes
         const herbeKm = currentData.constantes_calcul[3].value; // tonnes d'herbes collectées par km
         const energieTonneHerbe = currentData.constantes_calcul[4].value; // kWh produits à partir d'une tonne d'herbe
         const engraisTonneHerbe = currentData.constantes_calcul[5].value; // kg d'engrais produits à partir d'une tonne d'herbe
-        const prixVenteHerbe = currentData.constantes_calcul[6].value; // € / tonne d'herbe
-        const coutTraitementMethanisationTonne = 45; // Coût de traitement d'une tonne d'herbe en méthanisation
-        const coutTraitementCompostageTonne = 35; // Coût de traitement d'une tonne d'herbe en compostage
-        const benefMethanisationTonne = 12; // Bénéfices réalisés lors de la production d'un MWh en méthanisation
-        const benefCompostageTonne = 8; // Bénéfices réalisés lors de la production d'une tonne d'engrais par compostage
+        // const prixVenteHerbe = currentData.constantes_calcul[6].value; // € / tonne d'herbe
+        // const coutTraitementMethanisationTonne = 45; // Coût de traitement d'une tonne d'herbe en méthanisation
+        // const coutTraitementCompostageTonne = 35; // Coût de traitement d'une tonne d'herbe en compostage
+        // const benefMethanisationTonne = 12; // Bénéfices réalisés lors de la production d'un MWh en méthanisation
+        // const benefCompostageTonne = 8; // Bénéfices réalisés lors de la production d'une tonne d'engrais par compostage
 
         // Déclaration des variables pour le calcul des données GES
         let co2Classique, co2Collecte, co2Damier, co2Fauchage = 0;
         let consoClassique, consoCollecte, consoDamier, consoFauchage = 0;
         let parisNewyork = 0
-        let co2EviteValo = 0;
+        // let co2EviteValo = 0;
         // Constantes
         const consoKmClassique = currentData.constantes_calcul[7].value; // en L/km
         const consoKmCollecte = currentData.constantes_calcul[8].value; 
         const consoKmDamier = currentData.constantes_calcul[9].value;
         const facteurEmissionCarburant = currentData.constantes_calcul[10].value;
         const allerRetourParisNewYork = currentData.constantes_calcul[11].value;
-        const co2EviteMetha = currentData.constantes_calcul[12].value; // en tCO2 / MWh
-        const co2EviteCompostage = currentData.constantes_calcul[13].value; // en tCO2 / tonne de compost
+        // const co2EviteMetha = currentData.constantes_calcul[12].value; // en tCO2 / MWh
+        // const co2EviteCompostage = currentData.constantes_calcul[13].value; // en tCO2 / tonne de compost
 
         // Déclaration des variables pour le calcul des indicateurs écosystémiques
-        let qualiteSol, maintienBiodiv, fonctionHydro, microclimat, stockageCarbone, attenuationRisques, securite = 0;
+        let qualiteSol, maintienBiodiv, fonctionHydro, microclimat, stockageCarbone, attenuationRisques = 0;
+        // let securite = 0;
         let coefHauteurFauche, coefFrequenceFauche, coefSurfaceFauchee, coefFauchageDiff, coefExport = 0;
 
         // Calcul des impacts sur les indicateurs
@@ -284,7 +286,7 @@ const ChoixPlan = ({ currentData, setCurrentData}) => {
         quantiteHerbeCollecte = lineaireCollecte * herbeKm;
         quantiteEnergieProduite = quantiteHerbeCollecte * methanisation / 100 * energieTonneHerbe;
         quantiteEngraisProduite = quantiteHerbeCollecte * compostage / 100 * engraisTonneHerbe;
-        gainVenteHerbe = quantiteHerbeCollecte * prixVenteHerbe;
+        // gainVenteHerbe = quantiteHerbeCollecte * prixVenteHerbe;
         //benefMethanisation = benefMethanisationTonne * quantiteEnergieProduite;
         //benefCompostage = benefCompostageTonne * quantiteEngraisProduite;
         //benefValo = benefMethanisation + benefCompostage;
@@ -445,7 +447,7 @@ const ChoixPlan = ({ currentData, setCurrentData}) => {
                                   {plan.hauteurFauche}
                               </Typography>
                           </div>
-                          <img src={plan.image} alt={`Image de ${plan.nom}`} className="card-image" />
+                          <img src={plan.image} alt={plan.nom} className="card-image" />
                       </div>
                       <StyledButton
                   variant="contained"

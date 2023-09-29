@@ -3,15 +3,16 @@ import './infocard.scss';
 import Typography from '@material-ui/core/Typography';
 
 const InfoCard = ({ title, text, list, advice, onClose }) => {
-  // Function to handle keyboard events
-  const handleKeyPress = (event) => {
-    if (event.key === 'Escape' ) {
-      onClose();
-    }
-  };
+  
 
   // Add event listener when the component mounts
   useEffect(() => {
+    // Function to handle keyboard events
+    const handleKeyPress = (event) => {
+      if (event.key === 'Escape' ) {
+        onClose();
+      }
+    };
     window.addEventListener('keydown', handleKeyPress);
 
     // Clean up the event listener when the component unmounts

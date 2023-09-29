@@ -23,19 +23,19 @@ const getColorForValue = (value) => {
     "#2E804E", // Green (for values >= 80)
   ];
 
-  if (value ==1) {
+  if (value ===1) {
     return colorScale[0]; // Red
   }
-  else if (value == 2){
+  else if (value === 2){
     return colorScale[1]; // Orange
   }
-  else if (value == 3){
+  else if (value === 3){
     return colorScale[2]; // Yellow
   }
-  else if (value == 4){
+  else if (value === 4){
     return colorScale[4]; // Light Yellow
   }
-  else if (value == 5){
+  else if (value === 5){
     return colorScale[5]; // Light Green
   }
  else if (value > 5 && value < 20) {

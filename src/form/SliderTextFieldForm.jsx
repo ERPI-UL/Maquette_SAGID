@@ -1,12 +1,9 @@
 import React, { useState } from "react";
-import { TextField, Slider, Button } from "@mui/material";
+import { TextField, Slider } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import FormControl from "@mui/material/FormControl";
 
-import _, { set } from 'lodash';
-
-
-import {data } from '../constants'
+import _ from 'lodash';
 
 const StyledSlider = styled(Slider)({
   marginLeft: "1rem",

@@ -1,5 +1,3 @@
-import jsonData from "../constants/data.json";
-
 // Computational logic
 const compute_kpi = function (data) {
     // Récupération des autres valeurs
@@ -11,13 +9,13 @@ const compute_kpi = function (data) {
     let methanisation = data.planEntretien[4].parametres[5].value;
     let compostage = data.planEntretien[4].parametres[6].value;
     let fauchageDiff = data.planEntretien[4].parametres[7].value;
-    let luttePlantesInv = data.planEntretien[4].parametres[8].value;
+    // let luttePlantesInv = data.planEntretien[4].parametres[8].value;
     let largeursPasse1 = data.planEntretien[4].parametres[9].value;
     let largeursPasse2 = data.planEntretien[4].parametres[10].value;
     let largeursPasse3 = data.planEntretien[4].parametres[11].value;
-    let periodePasse1 = data.planEntretien[4].parametres[12].value;
-    let periodePasse2 = data.planEntretien[4].parametres[13].value;
-    let periodePasse3 = data.planEntretien[4].parametres[14].value;
+    // let periodePasse1 = data.planEntretien[4].parametres[12].value;
+    // let periodePasse2 = data.planEntretien[4].parametres[13].value;
+    // let periodePasse3 = data.planEntretien[4].parametres[14].value;
     let tailleReseau = data.planEntretien[4].parametres[15].value;
 
     // Déclaration des variables pour le calcul des indicateurs économiques
@@ -33,14 +31,14 @@ const compute_kpi = function (data) {
     let quantiteHerbeCollecte = 0;
     let quantiteEnergieProduite = 0;
     let quantiteEngraisProduite = 0;
-    let gainVenteHerbe = 0;
-    let benefValo, benefMethanisation, benefCompostage = 0;
-    let coutMethanisation, coutCompostage, coutValo = 0;
+    // let gainVenteHerbe = 0;
+    // let benefValo, benefMethanisation, benefCompostage = 0;
+    // let coutMethanisation, coutCompostage, coutValo = 0;
     // Constantes
     const herbeKm = data.constantes_calcul[3].value; // tonnes d'herbes collectées par km
     const energieTonneHerbe = data.constantes_calcul[4].value; // kWh produits à partir d'une tonne d'herbe
     const engraisTonneHerbe = data.constantes_calcul[5].value; // kg d'engrais produits à partir d'une tonne d'herbe
-    const prixVenteHerbe = data.constantes_calcul[6].value; // € / tonne d'herbe
+    // const prixVenteHerbe = data.constantes_calcul[6].value; // € / tonne d'herbe
     //const coutTraitementMethanisationTonne = 45; // Coût de traitement d'une tonne d'herbe en méthanisation
     //const coutTraitementCompostageTonne = 35; // Coût de traitement d'une tonne d'herbe en compostage
     //const benefMethanisationTonne = 12; // Bénéfices réalisés lors de la production d'un MWh en méthanisation
@@ -50,18 +48,19 @@ const compute_kpi = function (data) {
     let co2Classique, co2Collecte, co2Damier, co2Fauchage = 0;
     let consoClassique, consoCollecte, consoDamier, consoFauchage = 0;
     let parisNewyork = 0
-    let co2EviteValo = 0;
+    // let co2EviteValo = 0;
     // Constantes
     const consoKmClassique = data.constantes_calcul[7].value; // en L/km
     const consoKmCollecte = data.constantes_calcul[8].value;
     const consoKmDamier = data.constantes_calcul[9].value;
     const facteurEmissionCarburant = data.constantes_calcul[10].value;
     const allerRetourParisNewYork = data.constantes_calcul[11].value;
-    const co2EviteMetha = data.constantes_calcul[12].value; // en tCO2 / MWh
-    const co2EviteCompostage = data.constantes_calcul[13].value; // en tCO2 / tonne de compost
+    // const co2EviteMetha = data.constantes_calcul[12].value; // en tCO2 / MWh
+    // const co2EviteCompostage = data.constantes_calcul[13].value; // en tCO2 / tonne de compost
 
     // Déclaration des variables pour le calcul des indicateurs écosystémiques
-    let qualiteSol, maintienBiodiv, fonctionHydro, microclimat, stockageCarbone, attenuationRisques, securite = 0;
+    let qualiteSol, maintienBiodiv, fonctionHydro, microclimat, stockageCarbone, attenuationRisques = 0;
+    // let securite = 0;
     let coefHauteurFauche, coefFrequenceFauche, coefSurfaceFauchee, coefFauchageDiff, coefExport = 0;
 
     // Calcul des impacts sur les indicateurs
@@ -78,7 +77,7 @@ const compute_kpi = function (data) {
     quantiteHerbeCollecte = lineaireCollecte * herbeKm;
     quantiteEnergieProduite = quantiteHerbeCollecte * methanisation / 100 * energieTonneHerbe;
     quantiteEngraisProduite = quantiteHerbeCollecte * compostage / 100 * engraisTonneHerbe;
-    gainVenteHerbe = quantiteHerbeCollecte * prixVenteHerbe;
+    // gainVenteHerbe = quantiteHerbeCollecte * prixVenteHerbe;
     //benefMethanisation = benefMethanisationTonne * quantiteEnergieProduite;
     //benefCompostage = benefCompostageTonne * quantiteEngraisProduite;
     //benefValo = benefMethanisation + benefCompostage;
@@ -236,7 +235,9 @@ const save_currentData = function(data) {
     return data;
 };
 
-export default {
+const Services = {
     'compute_kpi': compute_kpi,
     'save_currentData': save_currentData
-}
+};
+
+export default Services;

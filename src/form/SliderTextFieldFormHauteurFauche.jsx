@@ -1,9 +1,7 @@
 import React, { useState } from "react";
-import { TextField, Slider, Button } from "@mui/material";
+import { TextField, Slider } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import FormControl from "@mui/material/FormControl";
-
-import {data } from '../constants'
 
 const StyledSlider = styled(Slider)({
   marginLeft: "1rem",
@@ -38,7 +36,7 @@ const StyledFormControl = styled(FormControl)({
   margin: "1rem",
 });
 
-const SliderTextFieldForm_HauteurFauche = ({ id, onChange, currentData }) => {
+const SliderTextFieldFormHauteurFauche = ({ id, onChange, currentData }) => {
 
     const [sliderValue, setSliderValue] = useState(currentData.planEntretien[4].parametres[4].value);
     const [textFieldValue, setTextFieldValue] = useState(currentData.planEntretien[4].parametres[4].value);
@@ -91,5 +89,5 @@ const SliderTextFieldForm_HauteurFauche = ({ id, onChange, currentData }) => {
 };
 
 
-export default SliderTextFieldForm_HauteurFauche;
+export default SliderTextFieldFormHauteurFauche;
 

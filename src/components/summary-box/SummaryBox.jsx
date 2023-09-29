@@ -23,7 +23,7 @@ import { Button } from "@mui/material";
 import InfoCard from './InfoCard';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faArrowDown, faArrowUpLong, faArrowRight} from "@fortawesome/free-solid-svg-icons";
+import {faArrowDown, faArrowUpLong} from "@fortawesome/free-solid-svg-icons";
 
 import { useState } from 'react';
 
@@ -226,11 +226,9 @@ export const SummaryBoxNotesGes = ({ item, visible }) => {
 
 export const SummaryBoxNotesBtn = ({ item }) => {
   let value_sum_saved = 0;
-  let value_sum = 0;
 
   for (let i = 1; i < item.length; i++) {
     value_sum_saved += item[i].value_saved;
-    value_sum += item[i].value;
   }
 
   return (
@@ -477,7 +475,7 @@ export const SummaryBoxSpecialEcosystemique = ({ item, widthGiven }) => {
   );
 };
 
-export const SummaryBoxSpecialEconomique_2 = ({ item, widthGiven }) => {
+export const SummaryBoxSpecialEconomique2 = ({ item, widthGiven }) => {
 
   const data = []
   const data_labels = []
