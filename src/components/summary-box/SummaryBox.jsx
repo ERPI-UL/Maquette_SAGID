@@ -433,6 +433,8 @@ export const SummaryBoxSpecialEcosystemique = ({ item, widthGiven }) => {
           display: false,
         },
         r: {
+          min: 0,
+          max: 5,
           pointLabels: {
             font: {
               size: 11,
