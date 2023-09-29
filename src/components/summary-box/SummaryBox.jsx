@@ -87,7 +87,7 @@ export const SummaryBoxIndicateursLogo = ({ item, currentData, index, visible })
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
   };
-  
+
   return (
     <div>
       <div className="summary-box">
@@ -107,8 +107,8 @@ export const SummaryBoxIndicateursLogo = ({ item, currentData, index, visible })
             ) : ( visible && 
               // Display an arrow to the right when item.value_after equals item.value
               <>
-                <FontAwesomeIcon icon={faArrowRight} bounce style={{ color: "#0000ff" }} />
-                <sup> 0 </sup>
+                {/* <FontAwesomeIcon icon={faArrowRight} bounce style={{ color: "#0000ff" }} />
+                <sup> 0 </sup> */}
               </>
             )}
             <CircleBox item={item} />
@@ -160,8 +160,8 @@ export const SummaryBoxNotesEco = ({ item, visible }) => {
         ) : ( visible &&
           // Display an arrow to the right when item.value_after equals item.value
           <>
-            <FontAwesomeIcon icon={faArrowRight} bounce style={{ color: "#0000ff" }} />
-            <sup> 0 % </sup>
+            {/* <FontAwesomeIcon icon={faArrowRight} bounce style={{ color: "#0000ff" }} />
+            <sup> 0 % </sup> */}
           </>
         )}
 
@@ -206,8 +206,8 @@ export const SummaryBoxNotesGes = ({ item, visible }) => {
         ) : ( visible &&
           // Display an arrow to the right when item.value_after equals item.value
           <>
-            <FontAwesomeIcon icon={faArrowRight} bounce style={{ color: "#0000ff" }} />
-            <sup> 0 %</sup>
+            {/* <FontAwesomeIcon icon={faArrowRight} bounce style={{ color: "#0000ff" }} />
+            <sup> 0 %</sup> */}
           </>
         )}
 
