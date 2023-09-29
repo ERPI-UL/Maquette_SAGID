@@ -69,24 +69,24 @@ const SliderTextFieldForm = ({ id, onChange, currentData }) => {
         initialTextFieldValue = initialSliderValue5.toString();
     }
 
-    console.log(sliderValues);
-
     const [textFieldValue, setTextFieldValue] = useState(initialTextFieldValue);
 
     const handleSliderChange = _.debounce((id, newValue) => {
 
         // Copiez les valeurs actuelles
         const updatedValues = { ...sliderValues };
-        // let slider1Value, slider2Value, slider3Value, slider4Value, slider5Value = 0;
-
-        const newCurrentData = { ...currentData };
-
         updatedValues[id] = newValue;
-        newCurrentData.planEntretien[4].parametres[0].value = updatedValues.slider1;
-        newCurrentData.planEntretien[4].parametres[1].value = updatedValues.slider2;
-        newCurrentData.planEntretien[4].parametres[2].value = updatedValues.slider3;
-        newCurrentData.planEntretien[4].parametres[5].value = updatedValues.slider4;
-        newCurrentData.planEntretien[4].parametres[6].value = updatedValues.slider5;
+
+        // let slider1Value, slider2Value, slider3Value, slider4Value, slider5Value = 0;
+        // const newCurrentData = { ...currentData };
+
+        // currentData.planEntretien[4].parametres[0].value = updatedValues.slider1;
+        // currentData.planEntretien[4].parametres[1].value = updatedValues.slider2;
+        // currentData.planEntretien[4].parametres[2].value = updatedValues.slider3;
+        // currentData.planEntretien[4].parametres[5].value = updatedValues.slider4;
+        // currentData.planEntretien[4].parametres[6].value = updatedValues.slider5;
+        // console.log("   --> handleSliderChange newCurrentData",newCurrentData);
+        // console.log("   --> handleSliderChange currentData",currentData);
 
         // if (id === "slider1") {
 
@@ -159,32 +159,25 @@ const SliderTextFieldForm = ({ id, onChange, currentData }) => {
         //   newCurrentData.planEntretien[4].parametres[6].value = newValue;
         // }
         
-        // // Mettez � jour les valeurs des sliders
-        sliderValues.slider1 = updatedValues.slider1;
-        sliderValues.slider2 = updatedValues.slider2;
-        sliderValues.slider3 = updatedValues.slider3;
-        sliderValues.slider4 = updatedValues.slider4;
-        sliderValues.slider5 = updatedValues.slider5;
-        // console.log("Slider : ")
-        // console.log(sliderValues)
-        
-        //const updatedValues = { ...sliderValues };
+        // Mise à jour des sliders
+        setSliderValues(updatedValues);
+        // Mise à jour du champ texte
         setTextFieldValue(newValue);
         // Appelez la fonction de rappel pour informer le composant parent des changements
-        // onChange(id, newValue);
+        onChange(id, newValue);
         }, 10);
  
 
   const handleTextFieldChange = (event) => {
+    console.log("event", event);
     let parsedValue = parseInt(event.target.value);
     parsedValue = parsedValue < 0 ? 0 : parsedValue;
     setTextFieldValue(parsedValue);
     let newValues = sliderValues;
     newValues[id] = parsedValue;
-    console.log("newValues",newValues);
     if (!isNaN(parsedValue)) {
       setSliderValues(newValues);
-      // onChange(id, parsedValue);
+      onChange(id, parsedValue);
     }
   };
 
