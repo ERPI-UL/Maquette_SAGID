@@ -1,3 +1,5 @@
+import jsonData from "../constants/data.json";
+
 // Computational logic
 const compute_kpi = function (data) {
     // Récupération des autres valeurs
@@ -209,4 +211,32 @@ const compute_kpi = function (data) {
     return data;
 };
 
-export default compute_kpi;
+const save_currentData = function(data) {
+    //Sauvegarde des indicateurs pré-comparaison
+    // Indicateurs économiques
+    data.indicateurs_economiques.forEach(indicateur => {
+        indicateur.value_saved = indicateur.value;
+    });
+    // Indicateurs écosystémiques
+    data.indicateurs_ecosysteme.forEach(indicateur => {
+        indicateur.value_saved = indicateur.value;
+    });
+    // Indicateurs GES
+    data.indicateurs_ges.forEach(indicateur => {
+        indicateur.value_saved = indicateur.value;
+    });
+    // Données valo
+    data.donnees_valo.forEach(indicateur => {
+        indicateur.value_saved = indicateur.value;
+    });
+    // Bilan global écosystémique
+    data.notes_ecosysteme.forEach(indicateur => {
+        indicateur.value_saved = indicateur.value;
+    });
+    return data;
+};
+
+export default {
+    'compute_kpi': compute_kpi,
+    'save_currentData': save_currentData
+}

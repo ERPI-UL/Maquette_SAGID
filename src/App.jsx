@@ -10,10 +10,11 @@ import ChoixBord from './form/ChoixBord'
 import Blank from './pages/Blank'
 import jsonData from "./constants/data.json";
 import React, { useState } from "react";
-import compute_kpi from "./services/compute_kpi.js"
+import Services from "./services/services.js"
 
 function App() {
-    const [currentData, setCurrentData] = useState(compute_kpi(jsonData)); // For storing and updating data
+    // For storing and updating data
+    const [currentData, setCurrentData] = useState(Services.compute_kpi(jsonData));
     return (
         <BrowserRouter>
             <Routes>

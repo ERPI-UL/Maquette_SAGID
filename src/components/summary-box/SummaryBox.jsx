@@ -402,16 +402,6 @@ export const SummaryBoxSpecialEcosystemique = ({ item, widthGiven }) => {
   const chartData = {
     labels: data_labels,
     datasets: [{
-      label: 'Avec les paramètres précédents',
-      data: data_saved,
-      fill: true,
-      backgroundColor: 'rgba(255, 99, 132, 0.2)',
-      borderColor: datasetColors[1],
-      pointBackgroundColor: 'rgb(255, 99, 132)',
-      pointBorderColor: '#fff',
-      pointHoverBackgroundColor: '#fff',
-      pointHoverBorderColor: 'rgb(255, 99, 132)'
-    }, {
       label: 'Avec les paramètres actuels ',
       data:data,
       fill: true,
@@ -421,6 +411,16 @@ export const SummaryBoxSpecialEcosystemique = ({ item, widthGiven }) => {
       pointBorderColor: '#fff',
       pointHoverBackgroundColor: '#fff',
       pointHoverBorderColor: 'rgb(54, 162, 235)'
+    }, {
+      label: 'Avec les paramètres précédents',
+      data: data_saved,
+      fill: true,
+      backgroundColor: 'rgba(255, 99, 132, 0.2)',
+      borderColor: datasetColors[1],
+      pointBackgroundColor: 'rgb(255, 99, 132)',
+      pointBorderColor: '#fff',
+      pointHoverBackgroundColor: '#fff',
+      pointHoverBorderColor: 'rgb(255, 99, 132)'
     }]}
 
     const chartOptions = {

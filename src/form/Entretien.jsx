@@ -8,7 +8,7 @@ import SliderTextFieldForm_HauteurFauche from './SliderTextFieldForm_HauteurFauc
 import _, { set } from 'lodash';
 
 import { styled } from '@mui/material/styles';
-import compute_kpi from "../services/compute_kpi.js"
+import Services from "../services/services.js"
 
 const StyledRadioGroup = styled(RadioGroup)({
     flexDirection: 'row',
@@ -43,7 +43,7 @@ const Entretien = ({ currentData, setCurrentData, setVisible }) => {
         // Update the changed value
         newCurrentData.planEntretien[4].parametres[7].value = event.target.value;
         // Update the currentData with up to date info
-        setCurrentData(compute_kpi(newCurrentData));
+        setCurrentData(Services.compute_kpi(newCurrentData));
     }, 100);
 
     // Modification par l'utilisateur du paramètre "Lutte contre les plantes invasives
@@ -55,7 +55,7 @@ const Entretien = ({ currentData, setCurrentData, setVisible }) => {
         // Update the changed value
         newCurrentData.planEntretien[4].parametres[8].value = event.target.value;
         // Update the currentData with up to date info
-        setCurrentData(compute_kpi(newCurrentData));
+        setCurrentData(Services.compute_kpi(newCurrentData));
     }, 100);
 
     // Modification de l'utilisateur du paramètre "Hauteur de fauche"
@@ -65,7 +65,7 @@ const Entretien = ({ currentData, setCurrentData, setVisible }) => {
         // Update the changed value
         newCurrentData.planEntretien[4].parametres[4].value = newValue;
         // Update the currentData with up to date info
-        setCurrentData(compute_kpi(newCurrentData));
+        setCurrentData(Services.compute_kpi(newCurrentData));
     }, 100);
 
     //TYPE DE FAUCHAGE ET VALORISATION
@@ -86,36 +86,13 @@ const Entretien = ({ currentData, setCurrentData, setVisible }) => {
             newCurrentData.planEntretien[4].parametres[6].value = newValue;
         }
         // Update the currentData with up to date info
-        setCurrentData(compute_kpi(newCurrentData));
+        setCurrentData(Services.compute_kpi(newCurrentData));
     }, 100);
 
     // COMPARAISON
     // Comparaison lancée par l'utilisateur
     function handleButtonClick() {
-        const newCurrentData = { ...currentData };
-        //Sauvegarde des indicateurs pré-comparaison
-        // Indicateurs économiques
-        newCurrentData.indicateurs_economiques.forEach(indicateur => {
-            indicateur.value_saved = indicateur.value;
-        });
-        // Indicateurs écosystémiques
-        newCurrentData.indicateurs_ecosysteme.forEach(indicateur => {
-            indicateur.value_saved = indicateur.value;
-        });
-        // Indicateurs GES
-        newCurrentData.indicateurs_ges.forEach(indicateur => {
-            indicateur.value_saved = indicateur.value;
-        });
-        // Données valo
-        newCurrentData.donnees_valo.forEach(indicateur => {
-            indicateur.value_saved = indicateur.value;
-        });
-        // Bilan global écosystémique
-        newCurrentData.notes_ecosysteme.forEach(indicateur => {
-            indicateur.value_saved = indicateur.value;
-        });
-
-        setCurrentData(newCurrentData);
+        setCurrentData(Services.save_currentData({ ...currentData }));
         setVisible(true);
     }
 
