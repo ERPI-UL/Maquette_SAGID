@@ -7,6 +7,8 @@ import {data } from '../constants'
 
 const StyledSlider = styled(Slider)({
   marginLeft: "1rem",
+  minWidth: "150px",
+  paddingTop: "33px",
   color: "primary",
   "& .MuiSlider-track": {
     display: "none",
@@ -14,7 +16,8 @@ const StyledSlider = styled(Slider)({
 });
 
 const StyledNumberInput = styled(TextField)(({ theme }) => ({
-  width: "100px",
+  width: "70px",
+  height: "56px",
   "& .MuiInputBase-input": {
     textAlign: "center",
   },
@@ -33,7 +36,6 @@ const StyledNumberInput = styled(TextField)(({ theme }) => ({
 
 const StyledFormControl = styled(FormControl)({
   margin: "1rem",
-  minWidth: "120px",
 });
 
 const SliderTextFieldForm_HauteurFauche = ({ id, onChange, currentData }) => {
@@ -59,7 +61,7 @@ const SliderTextFieldForm_HauteurFauche = ({ id, onChange, currentData }) => {
 
     return (
         <div className="row">
-            <div className="col-6">
+            <div className="col-3">
                 <StyledFormControl>
                     <StyledNumberInput
                         type="number"
@@ -69,7 +71,7 @@ const SliderTextFieldForm_HauteurFauche = ({ id, onChange, currentData }) => {
                     />
                 </StyledFormControl>
             </div>
-            <div className="col-6">
+            <div className="col-9">
                 <StyledFormControl>
                     <StyledSlider
                         value={sliderValue}

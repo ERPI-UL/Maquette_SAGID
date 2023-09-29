@@ -1028,19 +1028,22 @@ function handleButtonClick() {
       </StyledFormControl>
 
       <h3 component="legend">Type de fauchage</h3>
-     <FormLabel component="legend">Fauchage classique (en %)</FormLabel>
-          <SliderTextFieldForm id="slider1" onChange={(event, newValue) => handleSliderChange("slider1", newValue)} currentData={currentData} />
-     <FormLabel component="legend">Fauchage avec collecte (en %)</FormLabel>
-          <SliderTextFieldForm id="slider2"  onChange={(event, newValue) => handleSliderChange("slider2", newValue)} currentData={currentData} />
-      <FormLabel component="legend">Fauchage en damier (en %)</FormLabel>
-          <SliderTextFieldForm id="slider3"  onChange={(event, newValue) => handleSliderChange("slider3", newValue)} currentData={currentData} />
+      <StyledFormControl component="fieldset">
+        <FormLabel component="legend">Fauchage classique (en %)</FormLabel>
+            <SliderTextFieldForm id="slider1" onChange={(event, newValue) => handleSliderChange("slider1", newValue)} currentData={currentData} />
+        <FormLabel component="legend">Fauchage avec collecte (en %)</FormLabel>
+            <SliderTextFieldForm id="slider2"  onChange={(event, newValue) => handleSliderChange("slider2", newValue)} currentData={currentData} />
+        <FormLabel component="legend">Fauchage en damier (en %)</FormLabel>
+            <SliderTextFieldForm id="slider3"  onChange={(event, newValue) => handleSliderChange("slider3", newValue)} currentData={currentData} />
+      </StyledFormControl>
 
       <h3>Valorisation de l'herbe</h3>
-
-      <FormLabel component="legend">Méthanisation (en %)</FormLabel>
-          <SliderTextFieldForm id="slider4" onChange={(event, newValue) => handleSliderChange("slider4", newValue)} currentData={currentData} />
-      <FormLabel component="legend">Compostage (en %)</FormLabel>
-          <SliderTextFieldForm id="slider5" onChange={(event, newValue) => handleSliderChange("slider5", newValue)} currentData={currentData} />
+      <StyledFormControl component="fieldset">
+        <FormLabel component="legend">Méthanisation (en %)</FormLabel>
+            <SliderTextFieldForm id="slider4" onChange={(event, newValue) => handleSliderChange("slider4", newValue)} currentData={currentData} />
+        <FormLabel component="legend">Compostage (en %)</FormLabel>
+            <SliderTextFieldForm id="slider5" onChange={(event, newValue) => handleSliderChange("slider5", newValue)} currentData={currentData} />
+      </StyledFormControl>
 
     <Button
         variant="contained"
