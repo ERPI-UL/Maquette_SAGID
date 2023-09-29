@@ -44,7 +44,7 @@ const Entretien = ({ currentData, setCurrentData, setVisible }) => {
         let frequenceFauche = 0;
         let hauteurFauche = 0;
         let methanisation, compostage = 0;
-        let fauchageDiff, luttePlantesInv = "";
+        let fauchageDiff, luttePlantesInv = "non";
         let tailleReseau = 0;
         let largeursPasse1, largeursPasse2, largeursPasse3 = 0;
         let periodePasse1, periodePasse2, periodePasse3 = 0;
@@ -182,9 +182,9 @@ const Entretien = ({ currentData, setCurrentData, setVisible }) => {
             coefExport = 1;
         };
 
-        if (fauchageDiff === "differencie") {
+        if (fauchageDiff === "oui") {
             coefFauchageDiff = 1;
-        } else if (fauchageDiff === "non_differencie") {
+        } else if (fauchageDiff === "non") {
             coefFauchageDiff = -1;
         }
 
@@ -222,6 +222,8 @@ const Entretien = ({ currentData, setCurrentData, setVisible }) => {
         // Note globale
         let impactGlobal = 0;
 
+        impactGlobal = (qualiteSol + maintienBiodiv + fonctionHydro + microclimat + stockageCarbone + attenuationRisques) / 30 * 100;
+        impactGlobal = (qualiteSol + maintienBiodiv + fonctionHydro + microclimat + stockageCarbone + attenuationRisques) / 30 * 100;
         impactGlobal = (qualiteSol + maintienBiodiv + fonctionHydro + microclimat + stockageCarbone + attenuationRisques) / 30 * 100;
 
         // Actualisation des valeurs à afficher
@@ -408,9 +410,9 @@ const Entretien = ({ currentData, setCurrentData, setVisible }) => {
             coefExport = 1;
         };
 
-        if (fauchageDiff === "differencie") {
+        if (fauchageDiff === "oui") {
             coefFauchageDiff = 1;
-        } else if (fauchageDiff === "non_differencie") {
+        } else if (fauchageDiff === "non") {
             coefFauchageDiff = -1;
         }
 
@@ -635,9 +637,9 @@ const Entretien = ({ currentData, setCurrentData, setVisible }) => {
             coefExport = 1;
         };
 
-        if (fauchageDiff === "differencie") {
+        if (fauchageDiff === "oui") {
             coefFauchageDiff = 1;
-        } else if (fauchageDiff === "non_differencie") {
+        } else if (fauchageDiff === "non") {
             coefFauchageDiff = -1;
         }
 
@@ -877,9 +879,9 @@ const Entretien = ({ currentData, setCurrentData, setVisible }) => {
             coefExport = 1;
         };
 
-        if (fauchageDiff === "differencie") {
+        if (fauchageDiff === "oui") {
             coefFauchageDiff = 1;
-        } else if (fauchageDiff === "non_differencie") {
+        } else if (fauchageDiff === "non") {
             coefFauchageDiff = -1;
         }
 
