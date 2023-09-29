@@ -29,9 +29,9 @@ const EcoSystMainCard = ({ currentData, visible }) => {
               ))}
               </div>
             </Box>
-            <div class="tooltip-container">
+            <div className="tooltip-container">
               <h3>Indicateurs écosystémiques <FontAwesomeIcon icon={faInfoCircle}></FontAwesomeIcon> </h3>
-              <span class="tooltip">Cliquer sur chaque indicateur pour obtenir plus d'informations ! </span>
+              <span className="tooltip">Cliquer sur chaque indicateur pour obtenir plus d'informations ! </span>
             </div>
             <Box>
               <div className="row">
