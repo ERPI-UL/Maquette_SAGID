@@ -670,7 +670,7 @@
         {
           "nom": "Fauchage classique",
           "unité": "%",
-          "value": 0
+          "value": 100
         },
         {
           "nom": "Fauchage avec collecte",
@@ -685,12 +685,12 @@
         {
           "nom": "Fréquence de fauchage",
           "unité": "nombre",
-          "value": 0
+          "value": 1
         },
         {
           "nom": "Hauteur de fauche",
           "unité": "cm",
-          "value": 0
+          "value": 7
         },
         {
           "nom": "Méthanisation",
