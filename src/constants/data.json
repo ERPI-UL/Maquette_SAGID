@@ -705,12 +705,12 @@
         {
           "nom": "Fauchage différencié",
           "unité": "oui/non",
-          "value": ""
+          "value": "non"
         },
         {
           "nom": "Lutte contre les plantes invasives",
           "unité": "oui/non",
-          "value": ""
+          "value": "non"
         },
         {
           "nom": "Largeurs d'outils 1ère passe'",

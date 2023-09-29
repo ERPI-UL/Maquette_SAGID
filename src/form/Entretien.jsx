@@ -29,8 +29,8 @@ const StyledFormControl = styled(FormControl)({
 const Entretien = ({ currentData, setCurrentData, setVisible }) => {
 
     // Initialisation des options d'entretien en fonction du plan d'entretien choisi par l'utilisateur
-    const [selectedOption1, setSelectedOption1] = useState(currentData.planEntretien[4].parametres[7]);
-    const [selectedOption2, setSelectedOption2] = useState(currentData.planEntretien[4].parametres[8]);   
+    const [selectedOption1, setSelectedOption1] = useState(currentData.planEntretien[4].parametres[7].value);
+    const [selectedOption2, setSelectedOption2] = useState(currentData.planEntretien[4].parametres[8].value);   
     
     // OPTIONS D'ENTRETIEN
     // Modification de l'utilisateur du paramètre "Fauchage différencié"
@@ -51,24 +51,24 @@ const Entretien = ({ currentData, setCurrentData, setVisible }) => {
         
         // Récupération de la nouvelle valeur de hauteur de fauche
         fauchageDiff = event.target.value;
-        newCurrentData.planEntretien[4].parametres[7] = fauchageDiff;
+        newCurrentData.planEntretien[4].parametres[7].value = fauchageDiff;
         // Récupération des autres valeurs
-        fauchageClassique = newCurrentData.planEntretien[4].parametres[0];
-        fauchageCollecte = newCurrentData.planEntretien[4].parametres[1];
-        fauchageDamier = newCurrentData.planEntretien[4].parametres[2];
-        frequenceFauche = newCurrentData.planEntretien[4].parametres[3];
-        hauteurFauche = newCurrentData.planEntretien[4].parametres[4];
-        methanisation = newCurrentData.planEntretien[4].parametres[5];
-        compostage = newCurrentData.planEntretien[4].parametres[6];
-        fauchageDiff = newCurrentData.planEntretien[4].parametres[7];
-        luttePlantesInv = newCurrentData.planEntretien[4].parametres[8];
-        largeursPasse1 = newCurrentData.planEntretien[4].parametres[9];
-        largeursPasse2 = newCurrentData.planEntretien[4].parametres[10];
-        largeursPasse3 = newCurrentData.planEntretien[4].parametres[11];
-        periodePasse1 = newCurrentData.planEntretien[4].parametres[12];
-        periodePasse2 = newCurrentData.planEntretien[4].parametres[13];
-        periodePasse3 = newCurrentData.planEntretien[4].parametres[14];
-        tailleReseau = newCurrentData.planEntretien[4].parametres[15];
+        fauchageClassique = newCurrentData.planEntretien[4].parametres[0].value;
+        fauchageCollecte = newCurrentData.planEntretien[4].parametres[1].value
+        fauchageDamier = newCurrentData.planEntretien[4].parametres[2].value;
+        frequenceFauche = newCurrentData.planEntretien[4].parametres[3].value;
+        hauteurFauche = newCurrentData.planEntretien[4].parametres[4].value;
+        methanisation = newCurrentData.planEntretien[4].parametres[5].value;
+        compostage = newCurrentData.planEntretien[4].parametres[6].value;
+        fauchageDiff = newCurrentData.planEntretien[4].parametres[7].value;
+        luttePlantesInv = newCurrentData.planEntretien[4].parametres[8].value;
+        largeursPasse1 = newCurrentData.planEntretien[4].parametres[9].value;
+        largeursPasse2 = newCurrentData.planEntretien[4].parametres[10].value;
+        largeursPasse3 = newCurrentData.planEntretien[4].parametres[11].value;
+        periodePasse1 = newCurrentData.planEntretien[4].parametres[12].value;
+        periodePasse2 = newCurrentData.planEntretien[4].parametres[13].value;
+        periodePasse3 = newCurrentData.planEntretien[4].parametres[14].value;
+        tailleReseau = newCurrentData.planEntretien[4].parametres[15].value;
 
         // Déclaration des variables pour le calcul des indicateurs économiques
         let lineaireEntretenu = 0;
@@ -255,7 +255,7 @@ const Entretien = ({ currentData, setCurrentData, setVisible }) => {
 
         newCurrentData.notes_ecosysteme[1].value = Math.round(impactGlobal);
 
-        newCurrentData.planEntretien[4].parametres[15] = Math.round(tailleReseau);
+        newCurrentData.planEntretien[4].parametres[15].value = Math.round(tailleReseau);
         setCurrentData(newCurrentData);
     }, 100);
 
@@ -277,24 +277,24 @@ const Entretien = ({ currentData, setCurrentData, setVisible }) => {
         
         // Récupération de la nouvelle valeur de hauteur de fauche
         luttePlantesInv = event.target.value;
-        newCurrentData.planEntretien[4].parametres[8] = luttePlantesInv;
+        newCurrentData.planEntretien[4].parametres[8].value= luttePlantesInv;
         // Récupération des autres valeurs
-        fauchageClassique = newCurrentData.planEntretien[4].parametres[0];
-        fauchageCollecte = newCurrentData.planEntretien[4].parametres[1];
-        fauchageDamier = newCurrentData.planEntretien[4].parametres[2];
-        frequenceFauche = newCurrentData.planEntretien[4].parametres[3];
-        hauteurFauche = newCurrentData.planEntretien[4].parametres[4];
-        methanisation = newCurrentData.planEntretien[4].parametres[5];
-        compostage = newCurrentData.planEntretien[4].parametres[6];
-        fauchageDiff = newCurrentData.planEntretien[4].parametres[7];
-        luttePlantesInv = newCurrentData.planEntretien[4].parametres[8];
-        largeursPasse1 = newCurrentData.planEntretien[4].parametres[9];
-        largeursPasse2 = newCurrentData.planEntretien[4].parametres[10];
-        largeursPasse3 = newCurrentData.planEntretien[4].parametres[11];
-        periodePasse1 = newCurrentData.planEntretien[4].parametres[12];
-        periodePasse2 = newCurrentData.planEntretien[4].parametres[13];
-        periodePasse3 = newCurrentData.planEntretien[4].parametres[14];
-        tailleReseau = newCurrentData.planEntretien[4].parametres[15];
+        fauchageClassique = newCurrentData.planEntretien[4].parametres[0].value;
+        fauchageCollecte = newCurrentData.planEntretien[4].parametres[1].value;
+        fauchageDamier = newCurrentData.planEntretien[4].parametres[2].value;
+        frequenceFauche = newCurrentData.planEntretien[4].parametres[3].value;
+        hauteurFauche = newCurrentData.planEntretien[4].parametres[4].value;
+        methanisation = newCurrentData.planEntretien[4].parametres[5].value;
+        compostage = newCurrentData.planEntretien[4].parametres[6].value;
+        fauchageDiff = newCurrentData.planEntretien[4].parametres[7].value;
+        luttePlantesInv = newCurrentData.planEntretien[4].parametres[8].value;
+        largeursPasse1 = newCurrentData.planEntretien[4].parametres[9].value;
+        largeursPasse2 = newCurrentData.planEntretien[4].parametres[10].value;
+        largeursPasse3 = newCurrentData.planEntretien[4].parametres[11].value
+        periodePasse1 = newCurrentData.planEntretien[4].parametres[12].value;
+        periodePasse2 = newCurrentData.planEntretien[4].parametres[13].value;
+        periodePasse3 = newCurrentData.planEntretien[4].parametres[14].value;
+        tailleReseau = newCurrentData.planEntretien[4].parametres[15].value;
 
         // Déclaration des variables pour le calcul des indicateurs économiques
         let lineaireEntretenu = 0;
@@ -481,7 +481,7 @@ const Entretien = ({ currentData, setCurrentData, setVisible }) => {
 
         newCurrentData.notes_ecosysteme[1].value = Math.round(impactGlobal);
 
-        newCurrentData.planEntretien[4].parametres[14] = Math.round(tailleReseau);
+        newCurrentData.planEntretien[4].parametres[14].value = Math.round(tailleReseau);
 
         // Mise à jour des indicateurs
         setCurrentData(newCurrentData);
@@ -503,24 +503,24 @@ const Entretien = ({ currentData, setCurrentData, setVisible }) => {
         
         // Récupération de la nouvelle valeur de hauteur de fauche
         hauteurFauche = newValue;
-        newCurrentData.planEntretien[4].parametres[4] = hauteurFauche;
+        newCurrentData.planEntretien[4].parametres[4].value = hauteurFauche;
         // Récupération des autres valeurs
-        fauchageClassique = newCurrentData.planEntretien[4].parametres[0];
-        fauchageCollecte = newCurrentData.planEntretien[4].parametres[1];
-        fauchageDamier = newCurrentData.planEntretien[4].parametres[2];
-        frequenceFauche = newCurrentData.planEntretien[4].parametres[3];
-        hauteurFauche = newCurrentData.planEntretien[4].parametres[4];
-        methanisation = newCurrentData.planEntretien[4].parametres[5];
-        compostage = newCurrentData.planEntretien[4].parametres[6];
-        fauchageDiff = newCurrentData.planEntretien[4].parametres[7];
-        luttePlantesInv = newCurrentData.planEntretien[4].parametres[8];
-        largeursPasse1 = newCurrentData.planEntretien[4].parametres[9];
-        largeursPasse2 = newCurrentData.planEntretien[4].parametres[10];
-        largeursPasse3 = newCurrentData.planEntretien[4].parametres[11];
-        periodePasse1 = newCurrentData.planEntretien[4].parametres[12];
-        periodePasse2 = newCurrentData.planEntretien[4].parametres[13];
-        periodePasse3 = newCurrentData.planEntretien[4].parametres[14];
-        tailleReseau = newCurrentData.planEntretien[4].parametres[15];
+        fauchageClassique = newCurrentData.planEntretien[4].parametres[0].value;
+        fauchageCollecte = newCurrentData.planEntretien[4].parametres[1].value
+        fauchageDamier = newCurrentData.planEntretien[4].parametres[2].value;
+        frequenceFauche = newCurrentData.planEntretien[4].parametres[3].value;
+        hauteurFauche = newCurrentData.planEntretien[4].parametres[4].value;
+        methanisation = newCurrentData.planEntretien[4].parametres[5].value;
+        compostage = newCurrentData.planEntretien[4].parametres[6].value;
+        fauchageDiff = newCurrentData.planEntretien[4].parametres[7].value;
+        luttePlantesInv = newCurrentData.planEntretien[4].parametres[8].value;
+        largeursPasse1 = newCurrentData.planEntretien[4].parametres[9].value;
+        largeursPasse2 = newCurrentData.planEntretien[4].parametres[10].value;
+        largeursPasse3 = newCurrentData.planEntretien[4].parametres[11].value;
+        periodePasse1 = newCurrentData.planEntretien[4].parametres[12].value;
+        periodePasse2 = newCurrentData.planEntretien[4].parametres[13].value;
+        periodePasse3 = newCurrentData.planEntretien[4].parametres[14].value;
+        tailleReseau = newCurrentData.planEntretien[4].parametres[15].value;
 
         // Déclaration des variables pour le calcul des indicateurs économiques
         let lineaireEntretenu = 0;
@@ -708,7 +708,7 @@ const Entretien = ({ currentData, setCurrentData, setVisible }) => {
 
         newCurrentData.notes_ecosysteme[1].value = Math.round(impactGlobal);
 
-        newCurrentData.planEntretien[4].parametres[14] = Math.round(tailleReseau);
+        newCurrentData.planEntretien[4].parametres[14].value = Math.round(tailleReseau);
 
         // Mise à jour des indicateurs
         setCurrentData(newCurrentData);
@@ -732,37 +732,37 @@ const Entretien = ({ currentData, setCurrentData, setVisible }) => {
         // Récupération de la valeur modifiée
         if (id === "slider1") {
             fauchageClassique = newValue;
-            newCurrentData.planEntretien[4].parametres[0] = fauchageClassique;
+            newCurrentData.planEntretien[4].parametres[0].value = fauchageClassique;
         } else if (id === "slider2") {
             fauchageCollecte = newValue;
-            newCurrentData.planEntretien[4].parametres[1] = fauchageCollecte;
+            newCurrentData.planEntretien[4].parametres[1].value = fauchageCollecte;
         } else if (id === "slider3") {
             fauchageDamier = newValue;
-            newCurrentData.planEntretien[4].parametres[2] = fauchageDamier;
+            newCurrentData.planEntretien[4].parametres[2].value = fauchageDamier;
         } else if (id === "slider4") {
             methanisation = newValue;
-            newCurrentData.planEntretien[4].parametres[5] = methanisation;
+            newCurrentData.planEntretien[4].parametres[5].value = methanisation;
         } else if (id === "slider5") {
             compostage = newValue;
-            newCurrentData.planEntretien[4].parametres[6] = compostage;
+            newCurrentData.planEntretien[4].parametres[6].value = compostage;
         }
         // Récupération des autres valeurs
-        fauchageClassique = newCurrentData.planEntretien[4].parametres[0];
-        fauchageCollecte = newCurrentData.planEntretien[4].parametres[1];
-        fauchageDamier = newCurrentData.planEntretien[4].parametres[2];
-        frequenceFauche = newCurrentData.planEntretien[4].parametres[3];
-        hauteurFauche = newCurrentData.planEntretien[4].parametres[4];
-        methanisation = newCurrentData.planEntretien[4].parametres[5];
-        compostage = newCurrentData.planEntretien[4].parametres[6];
-        fauchageDiff = newCurrentData.planEntretien[4].parametres[7];
-        luttePlantesInv = newCurrentData.planEntretien[4].parametres[8];
-        largeursPasse1 = newCurrentData.planEntretien[4].parametres[9];
-        largeursPasse2 = newCurrentData.planEntretien[4].parametres[10];
-        largeursPasse3 = newCurrentData.planEntretien[4].parametres[11];
-        periodePasse1 = newCurrentData.planEntretien[4].parametres[12];
-        periodePasse2 = newCurrentData.planEntretien[4].parametres[13];
-        periodePasse3 = newCurrentData.planEntretien[4].parametres[14];
-        tailleReseau = newCurrentData.planEntretien[4].parametres[15];
+        fauchageClassique = newCurrentData.planEntretien[4].parametres[0].value;
+        fauchageCollecte = newCurrentData.planEntretien[4].parametres[1].value;
+        fauchageDamier = newCurrentData.planEntretien[4].parametres[2].value;
+        frequenceFauche = newCurrentData.planEntretien[4].parametres[3].value;
+        hauteurFauche = newCurrentData.planEntretien[4].parametres[4].value;
+        methanisation = newCurrentData.planEntretien[4].parametres[5].value;
+        compostage = newCurrentData.planEntretien[4].parametres[6].value;
+        fauchageDiff = newCurrentData.planEntretien[4].parametres[7].value;
+        luttePlantesInv = newCurrentData.planEntretien[4].parametres[8].value;
+        largeursPasse1 = newCurrentData.planEntretien[4].parametres[9].value;
+        largeursPasse2 = newCurrentData.planEntretien[4].parametres[10].value;
+        largeursPasse3 = newCurrentData.planEntretien[4].parametres[11].value;
+        periodePasse1 = newCurrentData.planEntretien[4].parametres[12].value;
+        periodePasse2 = newCurrentData.planEntretien[4].parametres[13].value;
+        periodePasse3 = newCurrentData.planEntretien[4].parametres[14].value;
+        tailleReseau = newCurrentData.planEntretien[4].parametres[15].value;
         
         // Déclaration des variables pour le calcul des indicateurs économiques
         let lineaireEntretenu = 0;
@@ -950,7 +950,7 @@ const Entretien = ({ currentData, setCurrentData, setVisible }) => {
 
         newCurrentData.notes_ecosysteme[1].value = Math.round(impactGlobal);
 
-        newCurrentData.planEntretien[4].parametres[15] = Math.round(tailleReseau);
+        newCurrentData.planEntretien[4].parametres[15].value = Math.round(tailleReseau);
 
         // Update the current data with the modified copy
         setCurrentData(newCurrentData);
@@ -1007,8 +1007,8 @@ function handleButtonClick() {
           value={selectedOption1}
           onChange={handleOption1Change}
         >
-          <FormControlLabel value="differencie" control={<Radio />} label="Oui" />
-          <FormControlLabel value="non_differencie" control={<Radio />} label="Non" />
+          <FormControlLabel value="oui" control={<Radio />} label="Oui" />
+          <FormControlLabel value="non" control={<Radio />} label="Non" />
         </StyledRadioGroup>
 
         <FormLabel component="legend">Lutte contre les plantes invasives</FormLabel>
@@ -1018,8 +1018,8 @@ function handleButtonClick() {
           value={selectedOption2}
           onChange={handleOption2Change}
         >
-          <FormControlLabel value="lutte" control={<Radio />} label="Oui" />
-          <FormControlLabel value="non_lutte" control={<Radio />} label="Non" />
+          <FormControlLabel value="oui" control={<Radio />} label="Oui" />
+          <FormControlLabel value="non" control={<Radio />} label="Non" />
           </StyledRadioGroup>
 
           <FormLabel component="legend">Hauteur de fauche (cm)</FormLabel>
@@ -1028,7 +1028,7 @@ function handleButtonClick() {
       </StyledFormControl>
 
       <h3 component="legend">Type de fauchage</h3>
-     <FormLabel component="legend">Fauchage avec collecte (en %)</FormLabel>
+     <FormLabel component="legend">Fauchage classique (en %)</FormLabel>
           <SliderTextFieldForm id="slider1" onChange={(event, newValue) => handleSliderChange("slider1", newValue)} currentData={currentData} />
      <FormLabel component="legend">Fauchage avec collecte (en %)</FormLabel>
           <SliderTextFieldForm id="slider2"  onChange={(event, newValue) => handleSliderChange("slider2", newValue)} currentData={currentData} />
