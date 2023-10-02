@@ -109,7 +109,7 @@ const ChoixPlan = ({ currentData, setCurrentData}) => {
                 // On extrait la valeur du paramètre
                 if (fauchageClassiqueParam) {
                     fauchageClassique = fauchageClassiqueParam.value;
-                    currentData.planEntretien[4].parametres[0] = fauchageClassiqueParam.value; // Sauvegarde de la valeur dans le plan d'entretien sauvegardé
+                    currentData.planEntretien[4].parametres[0].value = fauchageClassiqueParam.value; // Sauvegarde de la valeur dans le plan d'entretien sauvegardé
                 }
             // Fauchage avec collecte
                 // On récupère le paramètre "Fauchage avec collecte" dans ce plan d'entretetien
@@ -117,7 +117,7 @@ const ChoixPlan = ({ currentData, setCurrentData}) => {
                 // On extrait la valeur du paramètre
                 if (fauchageCollecteParam) {
                     fauchageCollecte = fauchageCollecteParam.value;
-                    currentData.planEntretien[4].parametres[1] = fauchageCollecteParam.value;
+                    currentData.planEntretien[4].parametres[1].value = fauchageCollecteParam.value;
                 }
             // Fauchage en damier
                 // On récupère le paramètre "Fauchage en damier" dans ce plan d'entretetien
@@ -125,7 +125,7 @@ const ChoixPlan = ({ currentData, setCurrentData}) => {
                 // On extrait la valeur du paramètre
                 if (fauchageDamierParam) {
                     fauchageDamier = fauchageDamierParam.value;
-                    currentData.planEntretien[4].parametres[2] = fauchageDamierParam.value;
+                    currentData.planEntretien[4].parametres[2].value = fauchageDamierParam.value;
                 }
             // Fréquence de fauchage
                 // On récupère le paramètre "Fréquence de fauchage" dans ce plan d'entretetien
@@ -133,7 +133,7 @@ const ChoixPlan = ({ currentData, setCurrentData}) => {
                 // On extrait la valeur du paramètre
                 if (frequenceFaucheParam) {
                     frequenceFauche = frequenceFaucheParam.value;
-                    currentData.planEntretien[4].parametres[3] = frequenceFaucheParam.value;
+                    currentData.planEntretien[4].parametres[3].value = frequenceFaucheParam.value;
                 }
             // Hauteur de fauche
                 // On récupère le paramètre "Hauteur de fauche" dans ce plan d'entretetien
@@ -141,7 +141,7 @@ const ChoixPlan = ({ currentData, setCurrentData}) => {
                 // On extrait la valeur du paramètre
                 if (hauteurFaucheParam) {
                     hauteurFauche = hauteurFaucheParam.value;
-                    currentData.planEntretien[4].parametres[4] = hauteurFaucheParam.value;
+                    currentData.planEntretien[4].parametres[4].value = hauteurFaucheParam.value;
                 }
             // Méthanisation
                 // On récupère le paramètre "Méthanisation" dans ce plan d'entretetien
@@ -149,7 +149,7 @@ const ChoixPlan = ({ currentData, setCurrentData}) => {
                 // On extrait la valeur du paramètre
                 if (methanisationParam) {
                     methanisation = methanisationParam.value;
-                    currentData.planEntretien[4].parametres[5] = methanisationParam.value;
+                    currentData.planEntretien[4].parametres[5].value = methanisationParam.value;
                 }
             // Compostage
                 // On récupère le paramètre "Compostage" dans ce plan d'entretetien
@@ -157,7 +157,7 @@ const ChoixPlan = ({ currentData, setCurrentData}) => {
                 // On extrait la valeur du paramètre
                 if (compostageParam) {
                     compostage = compostageParam.value;
-                    currentData.planEntretien[4].parametres[6] = compostageParam.value;
+                    currentData.planEntretien[4].parametres[6].value = compostageParam.value;
                 }
             // Fauchage différencié
                 // On récupère le paramètre "Fauchage différencié" dans ce plan d'entretetien
@@ -165,7 +165,7 @@ const ChoixPlan = ({ currentData, setCurrentData}) => {
                 // On extrait la valeur du paramètre
                 if (fauchageDiffParam) {
                     fauchageDiff = fauchageDiffParam.value;
-                    currentData.planEntretien[4].parametres[7] = fauchageDiffParam.value;
+                    currentData.planEntretien[4].parametres[7].value = fauchageDiffParam.value;
                 }
             // Lutte contre les plantes invasives
                 // On récupère le paramètre "Lutte contre les plantes invasives" dans ce plan d'entretetien
@@ -173,7 +173,7 @@ const ChoixPlan = ({ currentData, setCurrentData}) => {
                 // On extrait la valeur du paramètre
                 if (luttePlantesInvParam) {
                     // luttePlantesInv = luttePlantesInvParam.value;
-                    currentData.planEntretien[4].parametres[8] = luttePlantesInvParam.value;
+                    currentData.planEntretien[4].parametres[8].value = luttePlantesInvParam.value;
                 }
             // Nombre de largeurs d'outils 1ère passe
                 // On récupère le paramètre "Largeurs d'outils 1ère passe" dans ce plan d'entretetien
@@ -181,7 +181,7 @@ const ChoixPlan = ({ currentData, setCurrentData}) => {
                 // On extrait la valeur du paramètre
                 if (largeursPasse1Param) {
                     largeursPasse1 = largeursPasse1Param.value;
-                    currentData.planEntretien[4].parametres[9] = largeursPasse1Param.value;
+                    currentData.planEntretien[4].parametres[9].value = largeursPasse1Param.value;
                 }
             // Nombre de largeurs d'outils 2ème passe
                 // On récupère le paramètre "Largeurs d'outils 2ème passe" dans ce plan d'entretetien
@@ -189,7 +189,7 @@ const ChoixPlan = ({ currentData, setCurrentData}) => {
                 // On extrait la valeur du paramètre
                 if (largeursPasse2Param) {
                     largeursPasse2 = largeursPasse2Param.value;
-                    currentData.planEntretien[4].parametres[10] = largeursPasse2Param.value;
+                    currentData.planEntretien[4].parametres[10].value = largeursPasse2Param.value;
                 }
                 // Nombre de largeurs d'outils 3ème passe
                 // On récupère le paramètre "Largeurs d'outils 3ème passe" dans ce plan d'entretetien
@@ -197,7 +197,7 @@ const ChoixPlan = ({ currentData, setCurrentData}) => {
                 // On extrait la valeur du paramètre
                 if (largeursPasse3Param) {
                     largeursPasse3 = largeursPasse3Param.value;
-                    currentData.planEntretien[4].parametres[11] = largeursPasse3Param.value;
+                    currentData.planEntretien[4].parametres[11].value = largeursPasse3Param.value;
                 }
                 // Période de la 1ère passe
                 // On récupère le paramètre "Période 1ère fauche" dans ce plan d'entretetien
@@ -205,7 +205,7 @@ const ChoixPlan = ({ currentData, setCurrentData}) => {
                 // On extrait la valeur du paramètre
                 if (periodePasse1Param) {
                     // periodePasse1 = periodePasse1Param.value;
-                    currentData.planEntretien[4].parametres[12] = periodePasse1Param.value;
+                    currentData.planEntretien[4].parametres[12].value = periodePasse1Param.value;
                 }
                 // Période de la 2ème passe
                 // On récupère le paramètre "Période 2ème fauche" dans ce plan d'entretetien
@@ -213,7 +213,7 @@ const ChoixPlan = ({ currentData, setCurrentData}) => {
                 // On extrait la valeur du paramètre
                 if (periodePasse2Param) {
                     // periodePasse2 = periodePasse2Param.value;
-                    currentData.planEntretien[4].parametres[13] = periodePasse2Param.value;
+                    currentData.planEntretien[4].parametres[13].value = periodePasse2Param.value;
                 }
                 // Période de la 3ème passe
                 // On récupère le paramètre "Période 3ème fauche" dans ce plan d'entretetien
@@ -221,7 +221,7 @@ const ChoixPlan = ({ currentData, setCurrentData}) => {
                 // On extrait la valeur du paramètre
                 if (periodePasse3Param) {
                     // periodePasse3 = periodePasse3Param.value;
-                    currentData.planEntretien[4].parametres[14] = periodePasse3Param.value;
+                    currentData.planEntretien[4].parametres[14].value = periodePasse3Param.value;
                 }
             }
         });
@@ -281,7 +281,6 @@ const ChoixPlan = ({ currentData, setCurrentData}) => {
         coutFauchCollecte = lineaireCollecte * coutKmCollecte / 1000; 
         coutFauchDamier = lineaireDamier * coutKmDamier /1000; 
         coutFauchTotal = coutFauchClassique + coutFauchCollecte + coutFauchDamier; 
-        console.log(largeursPasse1);
            // Données valo
         quantiteHerbeCollecte = lineaireCollecte * herbeKm;
         quantiteEnergieProduite = quantiteHerbeCollecte * methanisation / 100 * energieTonneHerbe;
@@ -413,7 +412,7 @@ const ChoixPlan = ({ currentData, setCurrentData}) => {
 
         newCurrentData.notes_ecosysteme[1].value = Math.round(impactGlobal);
 
-        newCurrentData.planEntretien[4].parametres[15] = Math.round(tailleReseau);
+        newCurrentData.planEntretien[4].parametres[15].value = Math.round(tailleReseau);
         
 
         // Actualisation des indicateurs
