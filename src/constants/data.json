@@ -385,12 +385,12 @@
         {
           "nom": "Fauchage différencié",
           "unité": "oui/non",
-          "value": "non_differencie"
+          "value": "non"
         },
         {
           "nom": "Lutte contre les plantes invasives",
           "unité": "oui/non",
-          "value": "lutte"
+          "value": "oui"
         },
         {
           "nom": "Largeurs d'outils 1ère passe",
@@ -465,12 +465,12 @@
         {
           "nom": "Fauchage différencié",
           "unité": "oui/non",
-          "value": "non_differencie"
+          "value": "non"
         },
         {
           "nom": "Lutte contre les plantes invasives",
           "unité": "oui/non",
-          "value": "lutte"
+          "value": "oui"
         },
         {
           "nom": "Largeurs d'outils 1ère passe'",
@@ -545,12 +545,12 @@
         {
           "nom": "Fauchage différencié",
           "unité": "oui/non",
-          "value": "non_differencie"
+          "value": "non"
         },
         {
           "nom": "Lutte contre les plantes invasives",
           "unité": "oui/non",
-          "value": "lutte"
+          "value": "oui"
         },
         {
           "nom": "Largeurs d'outils 1ère passe'",
@@ -625,12 +625,12 @@
         {
           "nom": "Fauchage différencié",
           "unité": "oui/non",
-          "value": "non_differencie"
+          "value": "non"
         },
         {
           "nom": "Lutte contre les plantes invasives",
           "unité": "oui/non",
-          "value": "lutte"
+          "value": "oui"
         },
         {
           "nom": "Largeurs d'outils 1ère passe'",

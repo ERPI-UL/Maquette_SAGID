@@ -339,9 +339,9 @@ const ChoixPlan = ({ currentData, setCurrentData}) => {
             coefExport = 1;
         };
 
-        if (fauchageDiff === "differencie") {
+        if (fauchageDiff === "oui") {
             coefFauchageDiff = 1;
-        } else if (fauchageDiff === "non_differencie") {
+        } else if (fauchageDiff === "non") {
             coefFauchageDiff = -1;
         } 
 
