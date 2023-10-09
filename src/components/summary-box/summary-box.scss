@@ -38,7 +38,6 @@
     &__info__indicateur {
         width: 90%;
         text-align: center;
-        @include flex(flex-start, space-between);
         flex-direction: column;
         color: #000;
         font-size: $fontSizeSmall;
@@ -55,10 +54,18 @@
 
         &__value {
             font-weight: 700;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             font-size: $fontSizeSmall;
             color: $black;
             text-align: center;
             width: 100%;
+
+            &__indicator  {
+                position: absolute;
+                margin-left:100px;
+            }
         }
 
     }

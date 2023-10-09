@@ -65,9 +65,8 @@ const SummaryBox = ({ item }) => {
     </Box>
   );
 };
+
 export const SummaryBoxIndicateurs = ({ item }) => {
-
-
   return (
     <div className="summary-box">
       <div className="summary-box__info__indicateur">
@@ -81,9 +80,7 @@ export const SummaryBoxIndicateurs = ({ item }) => {
 };
 
 export const SummaryBoxIndicateursLogo = ({ item, currentData, index, visible }) => {
-
   const [isModalOpen, setIsModalOpen] = useState(false);
-
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
   };
@@ -93,38 +90,33 @@ export const SummaryBoxIndicateursLogo = ({ item, currentData, index, visible })
       <div className="summary-box">
         <div className="summary-box__info__indicateur">
           <div className="summary-box__info__indicateur__value" key={index} onClick={toggleModal}>
-            <span className="hover-text">{item.title}</span>
-            {item.value < item.value_saved ? ( visible &&  
-              <>
-                <FontAwesomeIcon icon={faArrowDown} bounce style={{ color: "#ff0000" }} />
-                <sup> - {item.value_saved - item.value} </sup>
-              </>
-            ) : item.value > item.value_saved ? ( visible && 
-              <>
-                <FontAwesomeIcon icon={faArrowUpLong} bounce style={{ color: "#00ff00" }} />
-                <sup> + {item.value - item.value_saved} </sup>
-              </>
-            ) : ( visible && 
-              // Display an arrow to the right when item.value_after equals item.value
-              <>
-                {/* <FontAwesomeIcon icon={faArrowRight} bounce style={{ color: "#0000ff" }} />
-                <sup> 0 </sup> */}
-              </>
-            )}
-            <CircleBox item={item} />
+              <CircleBox item={item} />
+              { visible && item.value < item.value_saved &&
+                <div className="summary-box__info__indicateur__value__indicator">
+                  <FontAwesomeIcon icon={faArrowDown} bounce style={{ color: "#ff0000" }} />
+                  <sup> - {item.value_saved - item.value} </sup>
+                </div>
+              }
+              { visible && item.value > item.value_saved &&
+                <div className="summary-box__info__indicateur__value__indicator">
+                  <FontAwesomeIcon icon={faArrowUpLong} bounce style={{ color: "#00ff00" }} />
+                  <sup> + {item.value - item.value_saved} </sup>
+                </div>
+              }
           </div>
+          <span className="hover-text">{item.title}</span>
         </div>
       </div>  
-          {isModalOpen && (
-            <InfoCard
-              title={item.title}
-              text={item.text}
-              list={item.analyse}
-              advice={item.advices}
-              onClose={toggleModal}
-            />
-          )}
-        </div>
+      {isModalOpen && (
+        <InfoCard
+          title={item.title}
+          text={item.text}
+          list={item.analyse}
+          advice={item.advices}
+          onClose={toggleModal}
+        />
+      )}
+    </div>
   );
   
 };    
