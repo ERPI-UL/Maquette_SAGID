@@ -83,7 +83,7 @@ const ChoixPlan = ({ currentData, setCurrentData}) => {
   const navigate = useNavigate();
 
   const redirectToDashboard = () => {
-    navigate("/"); // Replace '/other-page' with the desired URL or path
+    navigate("/dashboard"); // Replace '/other-page' with the desired URL or path
   };
 
     // Sélection d'un plan d'entretien par l'utilisateur
