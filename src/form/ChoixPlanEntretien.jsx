@@ -2,16 +2,9 @@ import React, { useState } from "react";
 import plans from '../data/plans-entretien.json'
 import { useNavigate } from "react-router-dom";
 import {
-    Box,
     Grid,
-    FormControl,
-    InputLabel,
-    Select,
     Typography,
     Button,
-    Paper,
-    MenuItem,
-    IconButton,
     Card,
     CardMedia,
     CardContent,
@@ -19,11 +12,9 @@ import {
 } from "@mui/material";
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import Services from "../services/services.js"
 
 const ChoixPlanEntretien = ({ currentData, setCurrentData, redirect }) => {
-
-    console.log(currentData)
-
     const [planEntretien, setPlanEntretien] = useState({index:0, plan: plans[0]});
     const navigate = useNavigate();
 
@@ -41,7 +32,7 @@ const ChoixPlanEntretien = ({ currentData, setCurrentData, redirect }) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        setCurrentData({ ...currentData, planEntretien: planEntretien.plan });
+        setCurrentData(Services.compute_kpi({ ...currentData, planEntretien: planEntretien.plan }));
         redirect && navigate(redirect);
     }
 

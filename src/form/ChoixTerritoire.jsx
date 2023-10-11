@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { Select, Box, FormControl, FormGroup, MenuItem, InputLabel, Button, Paper, Grid } from '@mui/material';
+import { Select, Box, FormControl, MenuItem, InputLabel, Button, Paper, Grid } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import GeoData from '../services/geoData'
 import Typography from '@mui/material/Typography';
+import Services from "../services/services.js"
 
 const UNDEF_TERRITOIRE = { region: '', departement: '' }
 
@@ -28,7 +29,7 @@ const ChoixTerritoire = ( {currentData, setCurrentData, redirect }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setCurrentData({...currentData, territoire: territoire});
+    setCurrentData(Services.compute_kpi({...currentData, territoire: territoire}));
     redirect && navigate(redirect);
   }
 
