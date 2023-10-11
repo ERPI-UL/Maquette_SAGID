@@ -34,7 +34,7 @@ const ChoixTerritoire = ( {currentData, setCurrentData, redirect }) => {
   }
 
   return (
-    <Paper elevation={4} sx={{ minWidth: 350, padding: 5 }} square={false}>
+    <Paper elevation={4} sx={{ width: 350, padding: 5 }} square={false}>
       <Box component="form" sx={{ width: '100%' }} onSubmit={handleSubmit}>
         <Grid container direction={"column"} spacing={2}>
         
@@ -45,7 +45,7 @@ const ChoixTerritoire = ( {currentData, setCurrentData, redirect }) => {
           </Grid>
         
           <Grid item>
-            <FormControl fullWidth >
+            <FormControl fullWidth size={"small"}>
               <InputLabel id="region-select-label">Région</InputLabel>
               <Select
                 labelId="region-select-label"
@@ -62,7 +62,7 @@ const ChoixTerritoire = ( {currentData, setCurrentData, redirect }) => {
           </Grid>
           
           <Grid item>
-            <FormControl fullWidth disabled={territoire.region === ''}>
+            <FormControl fullWidth disabled={territoire.region === ''}  size={"small"}>
               <InputLabel id="dept-select-label">Département</InputLabel>
               <Select
                 labelId="dept-select-label"
@@ -79,7 +79,7 @@ const ChoixTerritoire = ( {currentData, setCurrentData, redirect }) => {
           </Grid>
 
           <Grid item>
-            <FormControl fullWidth >
+            <FormControl fullWidth  size={"small"}>
               <Button
                 color="primary"
                 type="submit"
