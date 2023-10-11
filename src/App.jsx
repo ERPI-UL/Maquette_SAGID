@@ -5,6 +5,7 @@ import Dashboard from './pages/Dashboard'
 import MainLayout from './layout/MainLayout'
 import UserRegistrationForm from './form/UserRegistrationForm'
 import ChoixPlan from './form/ChoixPlan'
+import ChoixPlanEntretien from './form/ChoixPlanEntretien'
 import ChoixTerritoire from './form/ChoixTerritoire'
 import ChoixBord from './form/ChoixBord'
 import Blank from './pages/Blank'
@@ -15,19 +16,23 @@ import Services from "./services/services.js"
 
 function App() {
     // For storing and updating data
-    const [currentData, setCurrentData] = useState(Services.compute_kpi(jsonData));
+    const [currentData, setCurrentData] = useState(jsonData);
     return (
         <BrowserRouter>
             <Routes>
                 <Route path="" element={<MainLayout />}>
                     <Route index element={<ChoixTerritoire currentData={currentData}
-                        setCurrentData={setCurrentData} redirect={"/plan"} /> } />
+                        setCurrentData={setCurrentData} redirect={"/plan-entretien"} /> } />
+                    <Route path="plan-entretien" element={<ChoixPlanEntretien currentData={currentData}
+                        setCurrentData={setCurrentData} redirect={"/dashboard"}/>} />
+                    <Route path="dashboard" element={<Dashboard currentData={currentData}
+                        setCurrentData={setCurrentData} />} action={() => {
+                            console.log(currentData)
+                            setCurrentData(Services.compute_kpi(currentData))
+                            }}/>
+
                     <Route path="bord" element={<ChoixBord />} />
                     <Route path="user" element={<UserRegistrationForm />} />
-                    <Route path="plan" element={<ChoixPlan currentData={currentData}
-                        setCurrentData={setCurrentData} />} />
-                    <Route path="dashboard" element={<Dashboard currentData={currentData}
-                        setCurrentData={setCurrentData} />} />
                     <Route path="blank" element={<Blank />} />
                 </Route>
             </Routes>

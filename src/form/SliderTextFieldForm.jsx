@@ -40,7 +40,7 @@ const StyledFormControl = styled(FormControl)({
 
 const SliderTextFieldForm = ({ id, onChange, currentData }) => {
 
-  const parametres = currentData.planEntretien[4].parametres;
+  const parametres = currentData.planEntretien.parametres;
 
   const [values, setValues] = useState({
       slider1: parametres[0].value,

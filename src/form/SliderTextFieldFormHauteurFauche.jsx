@@ -38,8 +38,8 @@ const StyledFormControl = styled(FormControl)({
 
 const SliderTextFieldFormHauteurFauche = ({ id, onChange, currentData }) => {
 
-    const [sliderValue, setSliderValue] = useState(currentData.planEntretien[4].parametres[4].value);
-    const [textFieldValue, setTextFieldValue] = useState(currentData.planEntretien[4].parametres[4].value);
+    const [sliderValue, setSliderValue] = useState(currentData.planEntretien.parametres[4].value);
+    const [textFieldValue, setTextFieldValue] = useState(currentData.planEntretien.parametres[4].value);
     const maxValue = 15;
     const minValue = 0;
     const stepValue = 1;

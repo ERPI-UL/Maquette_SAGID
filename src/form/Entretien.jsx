@@ -28,10 +28,9 @@ const StyledFormControl = styled(FormControl)({
 });
 
 const Entretien = ({ currentData, setCurrentData, setVisible }) => {
-
     // Initialisation des options d'entretien en fonction du plan d'entretien choisi par l'utilisateur
-    const [selectedOption1, setSelectedOption1] = useState(currentData.planEntretien[4].parametres[7].value);
-    const [selectedOption2, setSelectedOption2] = useState(currentData.planEntretien[4].parametres[8].value);
+    const [selectedOption1, setSelectedOption1] = useState(currentData.planEntretien.parametres[7].value);
+    const [selectedOption2, setSelectedOption2] = useState(currentData.planEntretien.parametres[8].value);
 
     // OPTIONS D'ENTRETIEN
     // Modification de l'utilisateur du paramètre "Fauchage différencié"
@@ -41,7 +40,7 @@ const Entretien = ({ currentData, setCurrentData, setVisible }) => {
         // clone the current data
         const newCurrentData = { ...currentData };
         // Update the changed value
-        newCurrentData.planEntretien[4].parametres[7].value = event.target.value;
+        newCurrentData.planEntretien.parametres[7].value = event.target.value;
         // Update the currentData with up to date info
         setCurrentData(Services.compute_kpi(newCurrentData));
     }, 100);
@@ -53,7 +52,7 @@ const Entretien = ({ currentData, setCurrentData, setVisible }) => {
         // clone the current data
         const newCurrentData = { ...currentData };
         // Update the changed value
-        newCurrentData.planEntretien[4].parametres[8].value = event.target.value;
+        newCurrentData.planEntretien.parametres[8].value = event.target.value;
         // Update the currentData with up to date info
         setCurrentData(Services.compute_kpi(newCurrentData));
     }, 100);
@@ -63,7 +62,7 @@ const Entretien = ({ currentData, setCurrentData, setVisible }) => {
         // clone the current data
         const newCurrentData = { ...currentData };
         // Update the changed value
-        newCurrentData.planEntretien[4].parametres[4].value = newValue;
+        newCurrentData.planEntretien.parametres[4].value = newValue;
         // Update the currentData with up to date info
         setCurrentData(Services.compute_kpi(newCurrentData));
     }, 100);
@@ -76,15 +75,15 @@ const Entretien = ({ currentData, setCurrentData, setVisible }) => {
         const newCurrentData = { ...currentData };
         // Update the changed value
         if (id === "slider1") {
-            newCurrentData.planEntretien[4].parametres[0].value = newValue;
+            newCurrentData.planEntretien.parametres[0].value = newValue;
         } else if (id === "slider2") {
-            newCurrentData.planEntretien[4].parametres[1].value = newValue;
+            newCurrentData.planEntretien.parametres[1].value = newValue;
         } else if (id === "slider3") {
-            newCurrentData.planEntretien[4].parametres[2].value = newValue;
+            newCurrentData.planEntretien.parametres[2].value = newValue;
         } else if (id === "slider4") {
-            newCurrentData.planEntretien[4].parametres[5].value = newValue;
+            newCurrentData.planEntretien.parametres[5].value = newValue;
         } else if (id === "slider5") {
-            newCurrentData.planEntretien[4].parametres[6].value = newValue;
+            newCurrentData.planEntretien.parametres[6].value = newValue;
         }
         // Update the currentData with up to date info
         setCurrentData(Services.compute_kpi(newCurrentData));

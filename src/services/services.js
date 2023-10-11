@@ -1,22 +1,22 @@
 // Computational logic
 const compute_kpi = function (data) {
     // Récupération des autres valeurs
-    let fauchageClassique = data.planEntretien[4].parametres[0].value;
-    let fauchageCollecte = data.planEntretien[4].parametres[1].value
-    let fauchageDamier = data.planEntretien[4].parametres[2].value;
-    let frequenceFauche = data.planEntretien[4].parametres[3].value;
-    let hauteurFauche = data.planEntretien[4].parametres[4].value;
-    let methanisation = data.planEntretien[4].parametres[5].value;
-    let compostage = data.planEntretien[4].parametres[6].value;
-    let fauchageDiff = data.planEntretien[4].parametres[7].value;
-    // let luttePlantesInv = data.planEntretien[4].parametres[8].value;
-    let largeursPasse1 = data.planEntretien[4].parametres[9].value;
-    let largeursPasse2 = data.planEntretien[4].parametres[10].value;
-    let largeursPasse3 = data.planEntretien[4].parametres[11].value;
-    // let periodePasse1 = data.planEntretien[4].parametres[12].value;
-    // let periodePasse2 = data.planEntretien[4].parametres[13].value;
-    // let periodePasse3 = data.planEntretien[4].parametres[14].value;
-    let tailleReseau = data.planEntretien[4].parametres[15].value;
+    let fauchageClassique = data.planEntretien.parametres[0].value;
+    let fauchageCollecte = data.planEntretien.parametres[1].value
+    let fauchageDamier = data.planEntretien.parametres[2].value;
+    let frequenceFauche = data.planEntretien.parametres[3].value;
+    let hauteurFauche = data.planEntretien.parametres[4].value;
+    let methanisation = data.planEntretien.parametres[5].value;
+    let compostage = data.planEntretien.parametres[6].value;
+    let fauchageDiff = data.planEntretien.parametres[7].value;
+    // let luttePlantesInv = data.planEntretien.parametres[8].value;
+    let largeursPasse1 = data.planEntretien.parametres[9].value;
+    let largeursPasse2 = data.planEntretien.parametres[10].value;
+    let largeursPasse3 = data.planEntretien.parametres[11].value;
+    // let periodePasse1 = data.planEntretien.parametres[12].value;
+    // let periodePasse2 = data.planEntretien.parametres[13].value;
+    // let periodePasse3 = data.planEntretien.parametres[14].value;
+    let tailleReseau = data.territoire.departement.tailleReseau || 3271;
 
     // Déclaration des variables pour le calcul des indicateurs économiques
     let lineaireEntretenu = 0;
@@ -206,7 +206,6 @@ const compute_kpi = function (data) {
 
     data.notes_ecosysteme[1].value = Math.round(impactGlobal);
 
-    data.planEntretien[4].parametres[15].value = Math.round(tailleReseau);
     return data;
 };
 
