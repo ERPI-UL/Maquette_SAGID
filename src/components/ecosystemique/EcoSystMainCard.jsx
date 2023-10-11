@@ -23,6 +23,7 @@ const EcoSystMainCard = ({ currentData, visible }) => {
               {currentData.notes_ecosysteme.map((item, index) => (
                 <div key={`summary-${index}`}
                   className="col-6 col-md-6 col-sm-12"
+                  hidden={ index ===0 } // TODO : suppress as soon as we want to disply this indicator
                 >
                     <SummaryBoxIndicateursLogo item={item} currentData={currentData} index={index} visible={visible}/>
                 </div>
@@ -39,6 +40,7 @@ const EcoSystMainCard = ({ currentData, visible }) => {
                   <div
                     key={`summary-${index}`}
                     className="col-3 col-md-6 col-sm-12"
+                    hidden={ item.title === "Sécurité" } // TODO : suppress as soon as we want to disply this indicator
                   >
                     <SummaryBoxIndicateursLogo item={item} currentData={currentData} index={index} visible={visible}/>
                   </div>

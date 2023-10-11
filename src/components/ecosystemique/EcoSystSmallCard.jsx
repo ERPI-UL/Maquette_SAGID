@@ -21,6 +21,7 @@ const EcoSystSmallCard = ({ currentData }) => {
               {currentData.notes_ecosysteme.map((item, index) => (
                 <div key={`summary-${index}`}
                   className="col-6 col-md-6 col-sm-12"
+                  hidden={ index ===0 } // TODO : suppress as soon as we want to disply this indicator
                 >
                   <SummaryBoxIndicateurs item={item} />
                 </div>
