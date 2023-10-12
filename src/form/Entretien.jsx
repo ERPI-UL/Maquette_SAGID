@@ -69,25 +69,19 @@ const Entretien = ({ currentData, setCurrentData, setVisible }) => {
 
     //TYPE DE FAUCHAGE ET VALORISATION
     // Modification de l'utilisateur du paramètre "Fauchage classique"
-    // const handleSliderChange = _.debounce((id, newValue) => {
-    const handleSliderChange = _.debounce((id, newValue) => {
+    const handleSliderChange = (updatedValues) => {
         // clone the current data
         const newCurrentData = { ...currentData };
-        // Update the changed value
-        if (id === "slider1") {
-            newCurrentData.planEntretien.parametres[0].value = newValue;
-        } else if (id === "slider2") {
-            newCurrentData.planEntretien.parametres[1].value = newValue;
-        } else if (id === "slider3") {
-            newCurrentData.planEntretien.parametres[2].value = newValue;
-        } else if (id === "slider4") {
-            newCurrentData.planEntretien.parametres[5].value = newValue;
-        } else if (id === "slider5") {
-            newCurrentData.planEntretien.parametres[6].value = newValue;
-        }
+
+        newCurrentData.planEntretien.parametres[0].value = updatedValues['slider1']
+        newCurrentData.planEntretien.parametres[1].value = updatedValues['slider2']
+        newCurrentData.planEntretien.parametres[2].value = updatedValues['slider3']
+        newCurrentData.planEntretien.parametres[5].value = updatedValues['slider4']
+        newCurrentData.planEntretien.parametres[6].value = updatedValues['slider5']
+
         // Update the currentData with up to date info
         setCurrentData(Services.compute_kpi(newCurrentData));
-    }, 100);
+    }
 
     // COMPARAISON
     // Comparaison lancée par l'utilisateur
