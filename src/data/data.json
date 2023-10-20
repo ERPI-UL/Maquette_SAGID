@@ -31,25 +31,13 @@
       "unit": "k€"
     },
     {
-      "title": "Coûts de traitement des déchets",
+      "title": "Coûts supplémentaires liés à la collecte",
       "value": 0,
       "value_saved": 0,
       "unit": "k€"
     },
     {
-      "title": "Coûts de méthanisation",
-      "value": 0,
-      "value_saved": 0,
-      "unit": "k€"
-    },
-    {
-      "title": "Coûts de compostage",
-      "value": 0,
-      "value_saved": 0,
-      "unit": "k€"
-    },
-    {
-      "title": "Bénéfices liés à la valorisation des déchets",
+      "title": "Bénéfices liés à la vente de l'herbe",
       "value": 0,
       "value_saved": 0,
       "unit": "k€"
@@ -89,14 +77,7 @@
       "value": 0,
       "value_saved": 0,
       "text": "La fonction de maintien de la matière organique intègre à la fois la stabilisation des sols, le contrôle de l’érosion et la capacité de structuration des sols. Il s’agit d’évaluer la capacité du bord de route à stabiliser et structurer les sols et à contrôler l’érosion. Le contrôle de l’érosion s’intéresse au flux de matières arrachées et transportées, ce qui consiste à évaluer ce qui empêche la perte de sol fertile. La structuration du sol conditionne les capacités de stockage, de filtration et de rétention du sol et détermine la pénétrabilité des racines et la constitution de la biomasse végétale.  ",
-      "advices": {
-        "positifs": [
-          "Peut-être amélioré en utilisant des techniques d’entretien plus respectueuse"
-        ],
-        "negatifs": [
-          "Est négligée lorsque l’entretien est trop fréquent ou trop intensif"
-        ]
-      },
+      "advices": "La qualité du sol peut être améliorée en augmentant la hauteur de fauche et en réduisant la fréquence de fauchage.",
       "analyse": {
         "good": "Le sol est stable et structuré, il n’y a pas d’érosion.",
         "medium": "Le sol est stable et structuré, il y a une érosion modérée.",
@@ -108,14 +89,7 @@
       "value": 0,
       "value_saved": 0,
       "text": "La fonction de maintien de la biodiversité est complexe, car les bords de route jouent à la fois un rôle de corridor écologique et de réservoir de la biodiversité. Il s’agit d’évaluer la capacité des bords de route à fournir un espace propice à la présence, au maintien et au développement de la faune et de la flore locale. Le maintien des populations animales et végétales dépend des interactions entre les différents espaces permettant le brassage génétique, l’accès aux ressources, à des milieux de reproduction et de vie. Les interactions spatiales se font ente les réservoirs de biodiversité (lieux de vie et reproduction des espèces) grâce aux corridors écologiques (lieux de déplacement, de dispersion et d’accueil des espèces). Ces corridors sont les haies, talus, bandes enherbées, cours d’eau (Le Guillou 2020). ",
-      "advices": {
-        "positifs": [
-          "Peut-être amélioré en utilisant des techniques d’entretien plus respectueuse"
-        ],
-        "negatifs": [
-          "Est négligée lorsque l’entretien est trop fréquent ou trop intensif"
-        ]
-      },
+      "advices": "Le maintien de la biodiversité peut être amélioré en augmentant la hauteur de fauche, en réduisant la fréquence de fauchage, en augmentant la proportion de fauchage en damier, en mettant en place des pratiques de fauchage différencié et en collectant la biomasse des bords de route.",
       "analyse": {
         "good": "La biodiversité est présente et diversifiée, les corridors écologiques sont fonctionnels.",
         "medium": "La biodiversité est présente mais peu diversifiée, les corridors écologiques sont peu fonctionnels.",
@@ -127,14 +101,7 @@
       "value": 0,
       "value_saved": 0,
       "text": "La fonction hydrologique intègre des processus d’épuration de l’eau et de diminution du ruissellement. Il s’agit d’évaluer la capacité des bords de route à stocker et évacuer l’eau et à retarder le ruissellement vers les autres écosystèmes et leur capacité à restaurer/remédier l’eau. La capacité des bords de route à stocker et évacuer l’eau fait référence à la réserve utile des sols, il s’agit d’évaluer leur capacité à contenir et restituer l’eau aux racines (rétention de l’eau) pour la vie végétale. La capacité des bords de route porte sur la purification de l’eau, notamment par le biais du recyclage des nutriments et à la filtration des particules d’impuretés. ",
-      "advices": {
-        "positifs": [
-          "Peut-être amélioré en utilisant des techniques d’entretien plus respectueuse"
-        ],
-        "negatifs": [
-          "Est négligée lorsque l’entretien est trop fréquent ou trop intensif"
-        ]
-      },
+      "advices": "La fonction hydrologique est favorisée en collectant la biomasse des bords de route.",
       "analyse": {
         "good": "Les bords de route stockent et évacuent l’eau, ils ont une capacité de rétention et de filtration de l’eau.",
         "medium": "Les bords de route stockent et évacuent l’eau, ils ont une capacité de rétention mais pas de filtration de l’eau.",
@@ -146,14 +113,7 @@
       "value": 0,
       "value_saved": 0,
       "text": "Les végétaux, les sols et l’eau présents au sein de l’écosystème urbain peuvent jouer un rôle significatif dans l’abaissement des températures locales et la végétation ligneuse des bords de route joue un rôle de brise-vent. Cette fonction est très dépendante du recouvrement arboré (formation ligneuse) du bord de route, i.e. la proportion d’arbres et d’arbustes sur la portion concernée (Le Guillou 2020).  ",
-      "advices": {
-        "positifs": [
-          "Peut-être amélioré en utilisant des techniques d’entretien plus respectueuse"
-        ],
-        "negatifs": [
-          "Est négligée lorsque l’entretien est trop fréquent ou trop intensif"
-        ]
-      },
+      "advices": "Le microclimat peut être amélioré en augmentant la hauteur de fauche.",
       "analyse": {
         "good": "Les bords de route ont un recouvrement arboré important, ils ont un rôle de brise-vent et d’abaissement des températures.",
         "medium": "Les bords de route ont un recouvrement arboré moyen, ils ont un rôle de brise-vent mais pas d’abaissement des températures.",
@@ -165,14 +125,7 @@
       "value": 0,
       "value_saved": 0,
       "text": "La fonction de stockage du carbone représente la capacité du bord de route à accumuler du carbone dans le sol et dans la végétation luttant ainsi contre le réchauffement climatique. Cette fonction est principalement dépendante du type de sol ainsi que du type de végétation présente sur le bord de route. ",
-      "advices": {
-        "positifs": [
-          "Peut-être amélioré en utilisant des techniques d’entretien plus respectueuse"
-        ],
-        "negatifs": [
-          "Est négligée lorsque l’entretien est trop fréquent ou trop intensif"
-        ]
-      },
+      "advices": "Le stockage du carbone peut être favorisé en augmentant la hauteur de fauche, en réduisant la fréquence de fauche et en ne collectant pas la biomasse des bords de route.",
       "analyse": {
         "good": "Les bords de route ont une capacité de stockage du carbone importante.",
         "medium": "Les bords de route ont une capacité de stockage du carbone moyenne.",
@@ -184,14 +137,7 @@
       "value": 0,
       "value_saved": 0,
       "text": "L’atténuation des risques naturels concernent en majeur partie les risques d’inondations et d’incendie. L’aménagement du bord de route mais aussi son entretien vont avoir un impact sur sa capacité à limiter ces risques. ",
-      "advices": {
-        "positifs": [
-          "Peut-être amélioré en utilisant des techniques d’entretien plus respectueuse"
-        ],
-        "negatifs": [
-          "Est négligée lorsque l’entretien est trop fréquent ou trop intensif"
-        ]
-      },
+      "advices": "Les risques naturels peuvent être mitigés en réduisant la fréquence de fauche et en collectant la biomasse des bords de route.",
       "analyse": {
         "good": "Les bords de route ont une capacité à atténuer les risques naturels.",
         "medium": "Les bords de route ont une capacité moyenne à atténuer les risques naturels.",
@@ -255,8 +201,21 @@
       "value": 0,
       "value_saved": 0,
       "unit": "tonnes CO2e"
-    }
+    },
+  {
+    "title": "CO2 évité grâce à la méthanisation",
+    "value": 0,
+    "value_saved": 0,
+    "unit": "tonnes CO2e"
+  },
+  {
+    "title": "CO2 évité grâce au compostage",
+    "value": 0,
+    "value_saved": 0,
+    "unit": "tonnes CO2e"
+  }
   ],
+
   "notes_ecosysteme": [
     {
       "title": "pour la capacité du réseau à fournir des services écosystémiques",

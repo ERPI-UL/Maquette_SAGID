@@ -33,19 +33,14 @@ const compute_kpi = function (currentData) {
     const herbeKm = data.constantes_calcul[3].value; // tonnes d'herbes collectées par km
     const energieTonneHerbe = data.constantes_calcul[4].value; // kWh produits à partir d'une tonne d'herbe
     const engraisTonneHerbe = data.constantes_calcul[5].value; // kg d'engrais produits à partir d'une tonne d'herbe
-    // const prixVenteHerbe = data.constantes_calcul[6].value; // € / tonne d'herbe
+    const prixVenteHerbe = data.constantes_calcul[6].value; // € / tonne d'herbe
     const consoKmClassique = data.constantes_calcul[7].value; // en L/km
     const consoKmCollecte = data.constantes_calcul[8].value;
     const consoKmDamier = data.constantes_calcul[9].value;
     const facteurEmissionCarburant = data.constantes_calcul[10].value;
     const allerRetourParisNewYork = data.constantes_calcul[11].value;
-    // const co2EviteMetha = data.constantes_calcul[12].value; // en tCO2 / MWh
-    // const co2EviteCompostage = data.constantes_calcul[13].value; // en tCO2 / tonne de compost
-
-    // const coutTraitementMethanisationTonne = 45; // Coût de traitement d'une tonne d'herbe en méthanisation
-    // const coutTraitementCompostageTonne = 35; // Coût de traitement d'une tonne d'herbe en compostage
-    // const benefMethanisationTonne = 12; // Bénéfices réalisés lors de la production d'un MWh en méthanisation
-    // const benefCompostageTonne = 8; // Bénéfices réalisés lors de la production d'une tonne d'engrais par compostage
+    const co2EviteMethaTonne = data.constantes_calcul[12].value; // en tCO2 / tonne méthanisée
+    const co2EviteCompostageTonne = data.constantes_calcul[13].value; // en tCO2 / tonne de compost
 
     /*************************************************************/
     /* Déclaration des variables de calcul                       */
@@ -60,15 +55,14 @@ const compute_kpi = function (currentData) {
     let quantiteHerbeCollecte = 0;
     let quantiteEnergieProduite = 0;
     let quantiteEngraisProduite = 0;
-    // let gainVenteHerbe = 0;
-    // let benefValo, benefMethanisation, benefCompostage = 0;
-    // let coutMethanisation, coutCompostage, coutValo = 0;
+    let gainVenteHerbe = 0;
+    let coutSupCollecte
 
     // Déclaration des variables pour le calcul des données GES
     let co2Classique, co2Collecte, co2Damier, co2Fauchage = 0;
     let consoClassique, consoCollecte, consoDamier, consoFauchage = 0;
     let parisNewyork = 0
-    // let co2EviteValo = 0;
+    let co2EviteValo, co2EviteCompostage, co2EviteMetha = 0;
 
     // Déclaration des variables pour le calcul des indicateurs écosystémiques
     let qualiteSol, maintienBiodiv, fonctionHydro, microclimat, stockageCarbone, attenuationRisques = 0;
@@ -90,16 +84,11 @@ const compute_kpi = function (currentData) {
     coutFauchTotal = coutFauchClassique + coutFauchCollecte + coutFauchDamier;
 
     // Données valo
-    quantiteHerbeCollecte = lineaireCollecte * herbeKm;
+    quantiteHerbeCollecte = tailleReseau * 2 * fauchageCollecte / 100 * frequenceFauche * herbeKm;
     quantiteEnergieProduite = quantiteHerbeCollecte * methanisation / 100 * energieTonneHerbe;
     quantiteEngraisProduite = quantiteHerbeCollecte * compostage / 100 * engraisTonneHerbe;
-    // gainVenteHerbe = quantiteHerbeCollecte * prixVenteHerbe;
-    //benefMethanisation = benefMethanisationTonne * quantiteEnergieProduite;
-    //benefCompostage = benefCompostageTonne * quantiteEngraisProduite;
-    //benefValo = benefMethanisation + benefCompostage;
-    //coutMethanisation = quantiteHerbeCollecte * methanisation / 100 * coutTraitementMethanisationTonne / 1000;
-    //coutCompostage = quantiteHerbeCollecte * compostage / 100 * coutTraitementCompostageTonne / 1000;
-    //coutValo = coutMethanisation + coutCompostage;
+    gainVenteHerbe = quantiteHerbeCollecte * prixVenteHerbe / 1000;
+    coutSupCollecte = lineaireCollecte * coutKmCollecte / 1000 - lineaireCollecte * coutKmClassique / 1000
 
     // Données GES
     consoClassique = lineaireClassique * consoKmClassique;
@@ -111,7 +100,9 @@ const compute_kpi = function (currentData) {
     co2Damier = consoDamier * facteurEmissionCarburant / 1000;
     co2Fauchage = consoFauchage * facteurEmissionCarburant / 1000;
     parisNewyork = co2Fauchage / allerRetourParisNewYork; // un aller retour Paris New York émet 1,75 tonnes de CO2
-    //co2EviteValo = quantiteEnergieProduite * co2EviteMetha + quantiteEngraisProduite * co2EviteCompostage;
+    co2EviteMetha = quantiteHerbeCollecte * methanisation * co2EviteMethaTonne;
+    co2EviteCompostage = quantiteEngraisProduite * compostage * co2EviteCompostageTonne;
+    co2EviteValo = co2EviteMetha + co2EviteCompostage;
 
     /*************************************************************/
     /* Calcul des coefficients                                   */
@@ -162,7 +153,7 @@ const compute_kpi = function (currentData) {
         qualiteSol = 1;
     };
 
-    maintienBiodiv = (4 * coefHauteurFauche + 5 * coefFrequenceFauche + coefSurfaceFauchee + coefFauchageDiff + 2 * coefExport) / 13 * 5;
+    maintienBiodiv = (4 * coefHauteurFauche + 3 * coefFrequenceFauche + 4 * coefSurfaceFauchee + coefFauchageDiff + 2 * coefExport) / 14 * 5;
     if (maintienBiodiv < 1) {
         maintienBiodiv = 1;
     };
@@ -200,10 +191,8 @@ const compute_kpi = function (currentData) {
     data.indicateurs_economiques[2].value = Math.round(coutFauchClassique);
     data.indicateurs_economiques[3].value = Math.round(coutFauchCollecte);
     data.indicateurs_economiques[4].value = Math.round(coutFauchDamier);
-    //data.indicateurs_economiques[5].value = Math.round(coutValo);
-    //data.indicateurs_economiques[6].value = Math.round(coutMethanisation);
-    //data.indicateurs_economiques[7].value = Math.round(coutCompostage);
-    //data.indicateurs_economiques[8].value = Math.round(benefValo);
+    data.indicateurs_economiques[5].value = Math.round(coutSupCollecte);
+    data.indicateurs_economiques[6].value = Math.round(gainVenteHerbe);
 
     data.donnees_valo[0].value = Math.round(quantiteHerbeCollecte);
     data.donnees_valo[1].value = Math.round(quantiteEnergieProduite);
@@ -214,7 +203,9 @@ const compute_kpi = function (currentData) {
     data.indicateurs_ges[2].value = Math.round(co2Classique);
     data.indicateurs_ges[3].value = Math.round(co2Collecte);
     data.indicateurs_ges[4].value = Math.round(co2Damier);
-    //data.indicateurs_ges[5].value = Math.round(co2EviteValo);
+        data.indicateurs_ges[5].value = Math.round(co2EviteValo);
+    data.indicateurs_ges[6].value = Math.round(co2EviteMetha);
+    data.indicateurs_ges[7].value = Math.round(co2EviteCompostage);
 
     data.indicateurs_ecosysteme[0].value = Math.round(qualiteSol);
     data.indicateurs_ecosysteme[1].value = Math.round(maintienBiodiv);
