@@ -40,7 +40,7 @@ const ChoixPlanEntretien = ({ currentData, setCurrentData, redirect }) => {
 
         <Card component="form" sx={{ width: 550 }} onSubmit={handleSubmit}>
             <CardMedia
-                sx={{ height: 140 }}
+                sx={{ minHeight: 300 }}
                 image={planEntretien.plan.image_url}
                 title={planEntretien.plan.plan_name}
             />

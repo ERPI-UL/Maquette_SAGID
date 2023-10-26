@@ -10,11 +10,9 @@
 
     &__content {
         min-height: 100vh;
-        padding: $spacing;
         transition: all 0.5s ease-in-out;
 
         @include tablet {
-            padding: $mobileSpacing;
             position: relative;
             background-color: $bodyBg;
             z-index: 100;
@@ -25,6 +23,7 @@
 .main__content{
     height: 90%;
     margin: 0 auto;
+    height: 100vh;
 }
 
 

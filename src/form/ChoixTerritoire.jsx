@@ -34,67 +34,81 @@ const ChoixTerritoire = ( {currentData, setCurrentData, redirect }) => {
   }
 
   return (
-    <Paper elevation={4} sx={{ width: 350, padding: 5 }} square={false}>
-      <Box component="form" sx={{ width: '100%' }} onSubmit={handleSubmit}>
-        <Grid container direction={"column"} spacing={2}>
-        
-          <Grid item>
-            <Typography variant="h6">
-              Je choisis mon territoire
-            </Typography>
-          </Grid>
-        
-          <Grid item>
-            <FormControl fullWidth size={"small"}>
-              <InputLabel id="region-select-label">Région</InputLabel>
-              <Select
-                labelId="region-select-label"
-                id="region-select"
-                value={territoire.region}
-                label="Région"
-                onChange={handleRegionChange}
-              >
-                {GeoData.regions.list.map((region) => {
-                  return <MenuItem key={region.REG} value={region}>{region.LIBELLE}</MenuItem>
-                })}
-              </Select>
-            </FormControl>
-          </Grid>
-          
-          <Grid item>
-            <FormControl fullWidth disabled={territoire.region === ''}  size={"small"}>
-              <InputLabel id="dept-select-label">Département</InputLabel>
-              <Select
-                labelId="dept-select-label"
-                id="dept-select"
-                value={territoire.departement}
-                label="Département"
-                onChange={handleDepartementChange}
-              >
-                {filteredDepartements().map((departement) => {
-                  return <MenuItem key={departement.DEP} value={departement}>{departement.DEP} - {departement.LIBELLE}</MenuItem>
-                })}
-              </Select>
-            </FormControl>
-          </Grid>
+    <Grid className='choixEntretienPage' container direction={"row"} justifyContent="center" alignItems="center" spacing={2} sx={{
+      backgroundImage: `url(${process.env.PUBLIC_URL + '/images/route_departementale.jpg'})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      height:'100vh'
+    }}>
+      <Grid item container direction="row" justifyContent="center" alignItems="center">
+        <Paper elevation={4} sx={{ minWidth: 350, maxWidth: 500, width: '70%', padding: 5 }} square={false}>
+          <Box component="form" sx={{ width: '100%' }} onSubmit={handleSubmit}>
+            <Grid container direction={"column"} spacing={2}>
 
-          <Grid item>
-            <FormControl fullWidth  size={"small"}>
-              <Button
-                color="primary"
-                type="submit"
-                disabled={territoire.departement === ''}
-                variant={territoire.departement === '' ? "outlined" : "contained"}
-              >
-                Sélectionner
-              </Button>
-            </FormControl>
-          </Grid>
+              <Grid item>
+                <Typography variant="h6">
+                  Je choisis mon territoire
+                </Typography>
+              </Grid>
 
-        
-        </Grid>
-      </Box>
-    </Paper>
+              <Grid item>
+                <FormControl fullWidth size={"small"}>
+                  <InputLabel id="region-select-label">Région</InputLabel>
+                  <Select
+                    labelId="region-select-label"
+                    id="region-select"
+                    value={territoire.region}
+                    label="Région"
+                    onChange={handleRegionChange}
+                  >
+                    {GeoData.regions.list.map((region) => {
+                      return <MenuItem key={region.REG} value={region}>{region.LIBELLE}</MenuItem>
+                    })}
+                  </Select>
+                </FormControl>
+              </Grid>
+
+              <Grid item>
+                <FormControl
+                  fullWidth
+                  disabled={territoire.region === ''}
+                  size={"small"}
+                  sx={territoire.region === '' ? {opacity: 0} : {opacity: 1}}
+                >
+                  <InputLabel id="dept-select-label">Département</InputLabel>
+                  <Select
+                    labelId="dept-select-label"
+                    id="dept-select"
+                    value={territoire.departement}
+                    label="Département"
+                    onChange={handleDepartementChange}
+                  >
+                    {filteredDepartements().map((departement) => {
+                      return <MenuItem key={departement.DEP} value={departement}>{departement.DEP} - {departement.LIBELLE}</MenuItem>
+                    })}
+                  </Select>
+                </FormControl>
+              </Grid>
+
+              <Grid item>
+                <FormControl fullWidth  size={"small"}>
+                  <Button
+                    color="primary"
+                    type="submit"
+                    disabled={territoire.departement === ''}
+                    variant={territoire.departement === '' ? "outlined" : "contained"}
+                    sx={territoire.departement === '' ? {opacity: 0} : {opacity: 1}}
+                  >
+                    Sélectionner
+                  </Button>
+                </FormControl>
+              </Grid>
+
+            </Grid>
+          </Box>
+        </Paper>
+      </Grid>
+    </Grid>
   );
 }
 
