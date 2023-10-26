@@ -11,7 +11,7 @@ const MainLayout = () => {
         <AppBar position="fixed">
           <Toolbar>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              SAGID
+              Démo SAGID
             </Typography>
           </Toolbar>
         </AppBar>

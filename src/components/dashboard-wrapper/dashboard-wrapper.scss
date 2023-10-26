@@ -13,7 +13,7 @@
 
     &__main {
         width: 100%;
-        padding-right: $sideBarWidth * 0.2;
+        padding: $spacing;
 
         @include tablet {
             padding-right: 0;
@@ -24,10 +24,10 @@
         width: $sideBarWidth;
         background-color: $mainBg;
         padding: $spacing;
-        border-top-left-radius: $borderRadius;
-        border-bottom-left-radius: $borderRadius;
+        border-radius: $borderRadius;
         top: 0;
         right: 0;
+        height: max-content;
 
         @include tablet {
             position: relative;
