@@ -41,10 +41,7 @@ const InfoCard = ({ title, text, list, advice, onClose }) => {
         </div>
         <div className="external-popup__list">
           <h3>Comment améliorer la valeur ?</h3>
-          <ul>
-            <li> - {advice["positifs"]}</li>
-            <li> - {advice["negatifs"]}</li>
-          </ul>
+          <Typography>{advice}</Typography>
         </div>
       </div>
     </div>
