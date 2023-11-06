@@ -2,7 +2,7 @@
     {
         "plan_name": "Plan d'entretien n°1",
         "image_url": "/images/plan_entretien_n1.jpg",
-        "description":"Suspendisse congue mi a dapibus cursus. Sed malesuada varius dolor maximus aliquet. Cras vitae magna magna. Duis quis tempor diam. Pellentesque quis urna at leo hendrerit tincidunt. Donec eu pharetra leo. Vivamus laoreet nec quam id semper. Integer et arcu quis leo pulvinar condimentum eget sed nisi. Aliquam erat volutpat. Morbi placerat luctus molestie. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;        ",
+        "description":"Il s’agit du scénario le plus souvent rencontré au niveau départemental. Il se caractérise par une passe de sécurité au printemps suivie d’une passe d’entretien sur une largeur d’outil l’été. Une passe de débroussaillage est réalisée sur l’ensemble du bord de route en automne et en hiver.",
         "parametres": [
             {
                 "nom": "Fauchage classique",
@@ -84,7 +84,7 @@
     {
         "plan_name": "Plan d'entretien n°2",
         "image_url": "/images/plan_entretien_n2.jpg",
-        "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque scelerisque eros ut sem aliquam, sed lobortis velit tristique. Praesent condimentum erat ut elit egestas, quis vehicula mi convallis. Integer quis suscipit purus, et rhoncus sem. Vestibulum sit amet faucibus dolor. Aenean vulputate erat eu elit molestie, eu ullamcorper urna interdum. Ut luctus pulvinar dui at tincidunt. Curabitur mollis enim orci, a tempor nisl finibus at. Fusce vulputate ultricies ipsum nec imperdiet. Vivamus suscipit arcu arcu, vel mollis ex aliquet ac. Proin vestibulum velit a pulvinar auctor. Phasellus ac semper orci, id ullamcorper ex. Nam leo risus, vehicula tempor sagittis ut, rutrum ut odio. Phasellus imperdiet nec elit ut bibendum. Integer nec commodo est.",
+        "description":"Ce scénario se caractérise par une passe de sécurité réalisée au printemps suivie d’une passe d’entretien réalisée sur tout l’accotement. Une passe de débroussaillage a lieu sur l’ensemble du bord de route en automne et en hiver.",
         "parametres": [
             {
                 "nom": "Fauchage classique",
@@ -166,7 +166,7 @@
     {
         "plan_name": "Plan d'entretien n°3",
         "image_url": "/images/plan_entretien_n3.jpg",
-        "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mollis nunc non lectus sollicitudin consectetur. Nullam auctor massa vel neque suscipit mollis. Integer efficitur ex diam, eget tempus mauris luctus ut. Donec nec gravida nunc, commodo tempus sem. Cras ut ligula nisi. Integer consectetur vel eros at egestas. Praesent feugiat auctor ipsum, in suscipit lacus vulputate eget. Aenean nec ipsum ut mi condimentum vestibulum a eget elit.",
+        "description":"Dans ce scénario, une passe de sécurité est réalisée au printemps. Une passe d’entretien est réalisée sur la période estivale sur l’ensemble du bord de route. Une dernière passe est de nouveau réalisée sur la totalité du bord de route.",
         "parametres": [
             {
                 "nom": "Fauchage classique",
@@ -248,7 +248,7 @@
     {
         "plan_name": "Plan d'entretien n°4",
         "image_url": "/images/plan_entretien_n4.jpg",
-        "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris orci dui, pulvinar ut egestas quis, pulvinar eget massa. Sed pulvinar eget felis eget mattis. Donec convallis venenatis augue eu congue. Morbi hendrerit mattis justo eu posuere. In ut metus sit amet magna condimentum condimentum. Ut sed metus ut turpis auctor mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam mattis ullamcorper diam, at consequat eros dignissim eget.",
+        "description":"Ce scénario se caractérise par une passe de sécurité réalisée au printemps et sur le début de l’été suivie directement par une passe de débroussaillage qui commence à la fin de l’été et dure pendant toute la période automnale.",
         "parametres": [
             {
                 "nom": "Fauchage classique",
@@ -330,7 +330,7 @@
     {
         "plan_name": "Plan d'entretien n°5",
         "image_url": "/images/plan_entretien_n5.jpg",
-        "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris orci dui, pulvinar ut egestas quis, pulvinar eget massa. Sed pulvinar eget felis eget mattis. Donec convallis venenatis augue eu congue. Morbi hendrerit mattis justo eu posuere. In ut metus sit amet magna condimentum condimentum. Ut sed metus ut turpis auctor mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam mattis ullamcorper diam, at consequat eros dignissim eget.",
+        "description":"Ce scénario est composé d’une passe de sécurité réalisée au printemps. Une passe d’entretien est réalisée sur la période estivale sur l’accotement complet. La passe de débroussaillage qui a lieu en automne et en hiver ne concerne que les zones qui n’ont pas encore été fauchée qui sont le fossé et le talus.",
         "parametres": [
             {
                 "nom": "Fauchage classique",
