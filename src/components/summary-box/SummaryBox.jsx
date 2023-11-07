@@ -103,6 +103,11 @@ export const SummaryBoxIndicateursLogo = ({ item, currentData, index, visible })
                   <sup> + {item.value - item.value_saved} </sup>
                 </div>
               }
+              { visible && item.value == item.value_saved &&
+                <div className="summary-box__info__indicateur__value__indicator">
+                  =
+                </div>
+              }
           </div>
           <span className="hover-text">{item.title}</span>
         </div>
@@ -130,7 +135,7 @@ export const SummaryBoxNotesEco = ({ item, visible }) => {
     value_sum_saved += item[i].value_saved;
     value_sum += item[i].value;
   }
-console.log(item)
+
   percent = Math.round((value_sum - value_sum_saved) / value_sum_saved * 100);
 
   return (
