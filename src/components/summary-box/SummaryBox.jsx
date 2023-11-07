@@ -130,7 +130,7 @@ export const SummaryBoxNotesEco = ({ item, visible }) => {
     value_sum_saved += item[i].value_saved;
     value_sum += item[i].value;
   }
-
+console.log(item)
   percent = Math.round((value_sum - value_sum_saved) / value_sum_saved * 100);
 
   return (
@@ -247,10 +247,12 @@ export const SummaryBoxSpecialGES = ({ item }) => {
   const data = []
   const data_labels = []
 
-  for (let i = 1; i < item.length; i++) {
-    data_saved.push(item[i].value_saved)
-    data.push(item[i].value)
-    data_labels.push(item[i].title)
+  for (let i = 0; i < item.length; i++) {
+    if (item[i].display_on_charts) {
+      data_saved.push(item[i].value_saved)
+      data.push(item[i].value)
+      data_labels.push(item[i].title)
+    }
   }
 
   const chartOptions = {
@@ -315,10 +317,12 @@ export const SummaryBoxSpecialEconomique = ({ item, widthGiven }) => {
   const data = []
   const data_labels = []
 
-  for (let i = 2; i < item.length; i++) {
-    data_saved.push(item[i].value_saved)
-    data.push(item[i].value)
-    data_labels.push(item[i].title)
+  for (let i = 0; i < item.length; i++) {
+    if (item[i].display_on_charts) {
+      data_saved.push(item[i].value_saved)
+      data.push(item[i].value)
+      data_labels.push(item[i].title)
+    }
   }
 
   const chartOptions = {
@@ -384,9 +388,11 @@ export const SummaryBoxSpecialEcosystemique = ({ item, widthGiven }) => {
   const data_labels = []
 
   for (let i = 0; i < item.length; i++) {
-    data_saved.push(item[i].value_saved)
-    data.push(item[i].value)
-    data_labels.push(item[i].title)
+    if (item[i].display_on_charts) {
+      data_saved.push(item[i].value_saved)
+      data.push(item[i].value)
+      data_labels.push(item[i].title)
+    }
   }
 
   const chartData = {
@@ -472,9 +478,11 @@ export const SummaryBoxSpecialEconomique2 = ({ item, widthGiven }) => {
   const data = []
   const data_labels = []
 
-  for (let i = 2; i < item.length; i++) {
-    data.push(item[i].value)
-    data_labels.push(item[i].title)
+  for (let i = 0; i < item.length; i++) {
+    if (item[i].display_on_charts) {
+      data.push(item[i].value)
+      data_labels.push(item[i].title)
+    }
   }
 
   const chartOptions = {

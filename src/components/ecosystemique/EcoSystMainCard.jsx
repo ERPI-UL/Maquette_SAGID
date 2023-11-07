@@ -11,6 +11,8 @@ import { Tip } from "../../form/Entretien.jsx"
 import "./ecosystemique.scss";
 
 const EcoSystMainCard = ({ currentData, visible }) => {
+  let indicators = currentData.indicateurs_ecosysteme.filter((item, index) => (item.display_on_charts));
+  let notes = currentData.notes_ecosysteme.filter((item, index) => (item.display_on_charts));
   return (
     <div className="ecosystemique">
       <FontAwesomeIcon icon={faLeaf} />
@@ -21,10 +23,9 @@ const EcoSystMainCard = ({ currentData, visible }) => {
             <h3>Bilan Global</h3>
             <Box>
               <div className="row">
-              {currentData.notes_ecosysteme.map((item, index) => (
+              {notes.map((item, index) => (
                 <div key={`summary-${index}`}
                   className="col-6 col-md-6 col-sm-12"
-                  hidden={ index ===0 } // TODO : suppress as soon as we want to disply this indicator
                 >
                     <SummaryBoxIndicateursLogo item={item} currentData={currentData} index={index} visible={visible}/>
                 </div>
@@ -34,11 +35,10 @@ const EcoSystMainCard = ({ currentData, visible }) => {
             <h3><Tip>Cliquer sur chaque indicateur pour obtenir plus d'informations !</Tip>Indicateurs écosystémiques</h3>
             <Box>
               <div className="row">
-                {currentData.indicateurs_ecosysteme.map((item, index) => (
+                {indicators.map((item, index) => (
                   <div
                     key={`summary-${index}`}
                     className="col-3 col-md-6 col-sm-12"
-                    hidden={ item.title === "Sécurité" } // TODO : suppress as soon as we want to disply this indicator
                   >
                     <SummaryBoxIndicateursLogo item={item} currentData={currentData} index={index} visible={visible}/>
                   </div>

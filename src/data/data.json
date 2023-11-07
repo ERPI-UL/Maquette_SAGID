@@ -4,43 +4,50 @@
       "title": "Coût total de l'entretien",
       "value": 0,
       "value_saved": 0,
-      "unit": "k€"
+      "unit": "k€",
+      "display_on_charts": false
     },
     {
       "title": "Coût au kilomètre",
       "value": 0,
       "value_saved": 0,
-      "unit": "€/km"
+      "unit": "€/km",
+      "display_on_charts": false
     },
     {
       "title": "Coûts de fauchage classique",
       "value": 0,
       "value_saved": 0,
-      "unit": "k€"
+      "unit": "k€",
+      "display_on_charts": true
     },
     {
       "title": "Coûts de fauchage avec collecte",
       "value": 0,
       "value_saved": 0,
-      "unit": "k€"
+      "unit": "k€",
+      "display_on_charts": true
     },
     {
       "title": "Coûts de fauchage en damier",
       "value": 0,
       "value_saved": 0,
-      "unit": "k€"
+      "unit": "k€",
+      "display_on_charts": true
     },
     {
       "title": "Coûts supplémentaires liés à la collecte",
       "value": 0,
       "value_saved": 0,
-      "unit": "k€"
+      "unit": "k€",
+      "display_on_charts": false
     },
     {
       "title": "Bénéfices liés à la vente de l'herbe",
       "value": 0,
       "value_saved": 0,
-      "unit": "k€"
+      "unit": "k€",
+      "display_on_charts": false
     }
   ],
 
@@ -82,7 +89,8 @@
         "good": "Le sol est stable et structuré, il n’y a pas d’érosion.",
         "medium": "Le sol est stable et structuré, il y a une érosion modérée.",
         "bad": "Le sol est instable et non structuré, il y a une érosion importante."
-      }
+      },
+      "display_on_charts": true
     },
     {
       "title": "Maintien de la biodiversité",
@@ -94,7 +102,8 @@
         "good": "La biodiversité est présente et diversifiée, les corridors écologiques sont fonctionnels.",
         "medium": "La biodiversité est présente mais peu diversifiée, les corridors écologiques sont peu fonctionnels.",
         "bad": "La biodiversité est absente ou peu présente, les corridors écologiques sont inexistants."
-      }
+      },
+      "display_on_charts": true
     },
     {
       "title": "Fonction hydrologique",
@@ -106,7 +115,8 @@
         "good": "Les bords de route stockent et évacuent l’eau, ils ont une capacité de rétention et de filtration de l’eau.",
         "medium": "Les bords de route stockent et évacuent l’eau, ils ont une capacité de rétention mais pas de filtration de l’eau.",
         "bad": "Les bords de route ne stockent pas l’eau, ils n’ont pas de capacité de rétention et de filtration de l’eau."
-      }
+      },
+      "display_on_charts": true
     },
     {
       "title": "Microclimat ",
@@ -118,7 +128,8 @@
         "good": "Les bords de route ont un recouvrement arboré important, ils ont un rôle de brise-vent et d’abaissement des températures.",
         "medium": "Les bords de route ont un recouvrement arboré moyen, ils ont un rôle de brise-vent mais pas d’abaissement des températures.",
         "bad": "Les bords de route ont un recouvrement arboré faible, ils n’ont pas de rôle de brise-vent et d’abaissement des températures."
-      }
+      },
+      "display_on_charts": true
     },
     {
       "title": "Stockage du carbone",
@@ -130,7 +141,8 @@
         "good": "Les bords de route ont une capacité de stockage du carbone importante.",
         "medium": "Les bords de route ont une capacité de stockage du carbone moyenne.",
         "bad": "Les bords de route ont une capacité de stockage du carbone faible."
-      }
+      },
+      "display_on_charts": true
     },
     {
       "title": "Atténuation des risques naturels",
@@ -142,7 +154,8 @@
         "good": "Les bords de route ont une capacité à atténuer les risques naturels.",
         "medium": "Les bords de route ont une capacité moyenne à atténuer les risques naturels.",
         "bad": "Les bords de route n’ont pas de capacité à atténuer les risques naturels."
-      }
+      },
+      "display_on_charts": true
     },
     {
       "title": "Sécurité",
@@ -161,7 +174,8 @@
         "good": "Les bords de route sont entretenus de manière à assurer la sécurité des usagers.",
         "medium": "Les bords de route sont entretenus de manière à assurer la sécurité des usagers mais peuvent être améliorés.",
         "bad": "Les bords de route ne sont pas entretenus de manière à assurer la sécurité des usagers."
-      }
+      },
+      "display_on_charts": false
     }
   ],
   "indicateurs_ges": [
@@ -170,49 +184,57 @@
       "value": 0,
       "subtitle": "soit l'équivalent de",
       "subtitle_2": "allers retours Paris - New York",
-      "unit": "tonnes CO2e"
+      "unit": "tonnes CO2e",
+      "display_on_charts": false
     },
     {
       "title": "CO2 émis lors de l'entretien",
       "value": 0,
       "value_saved": 0,
-      "unit": "tonnes CO2e"
+      "unit": "tonnes CO2e",
+      "display_on_charts": false
     },
     {
       "title": "CO2 émis par le fauchage classique",
       "value": 0,
       "value_saved": 0,
-      "unit": "tonnes CO2e"
+      "unit": "tonnes CO2e",
+      "display_on_charts": true
     },
     {
       "title": "CO2 émis par le fauchage avec collecte",
       "value": 0,
       "value_saved": 0,
-      "unit": "tonnes CO2e"
+      "unit": "tonnes CO2e",
+      "display_on_charts": true
     },
     {
       "title": "CO2 émis par le fauchage en damier",
       "value": 0,
       "value_saved": 0,
-      "unit": "tonnes CO2e"
+      "unit": "tonnes CO2e",
+      "display_on_charts": true
     },
     {
       "title": "CO2 évité grâce à la valorisation de la biomasse",
       "value": 0,
       "value_saved": 0,
-      "unit": "tonnes CO2e"
+      "unit": "tonnes CO2e",
+      "display_on_charts": false
     },
   {
     "title": "CO2 évité grâce à la méthanisation",
     "value": 0,
     "value_saved": 0,
-    "unit": "tonnes CO2e"
+    "unit": "tonnes CO2e",
+    "display_on_charts": false
   },
   {
     "title": "CO2 évité grâce au compostage",
     "value": 0,
     "value_saved": 0,
-    "unit": "tonnes CO2e"
+    "unit": "tonnes CO2e",
+    "display_on_charts": false
   }
   ],
 
@@ -220,12 +242,14 @@
     {
       "title": "pour la capacité du réseau à fournir des services écosystémiques",
       "value": 0,
-      "value_saved": 0
+      "value_saved": 0,
+      "display_on_charts": false
     },
     {
       "title": "pour l'impact de l'entretien sur la capacité",
       "value": 0,
-      "value_saved": 0
+      "value_saved": 0,
+      "display_on_charts": true
     }
   ],
 
