@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { FormControl, FormControlLabel, Radio, RadioGroup, Button } from '@mui/material';
+import { FormControl, FormControlLabel, Radio, RadioGroup, Button, Typography, Paper } from '@mui/material';
+import Tooltip, { tooltipClasses } from '@mui/material/Tooltip';
+import InfoIcon from '@mui/icons-material/Info';
 import FormLabel from '@mui/material/FormLabel';
 
 import './form.scss';
@@ -26,6 +28,35 @@ const StyledFormControl = styled(FormControl)({
         marginBottom: '0.5rem',
     },
 });
+
+const HtmlTooltip = styled(({ className, ...props }) => (
+    <Tooltip {...props} classes={{ popper: className }} />
+  ))(({ theme }) => ({
+    [`& .${tooltipClasses.tooltip}`]: {
+      backgroundColor: '#f5f5f9',
+      color: 'rgba(0, 0, 0, 0.87)',
+      maxWidth: 400,
+      fontSize: theme.typography.pxToRem(12),
+      border: '6px solid rgba(97, 97, 97, 0.9)',
+      boxShadow: '0px 8px 24px rgba(149, 157, 165, 0.2)',
+      borderRadius: '8px'
+    },
+  }));
+
+const Tip = ({children}) => {
+
+    return (
+        <HtmlTooltip placement="left"
+            title={
+                <React.Fragment>
+                    <Typography align="justify"> { children } </Typography>
+                </React.Fragment>
+        }>
+            <InfoIcon color="info" fontSize="small" sx={{ marginRight: '8px' }}/>
+        </HtmlTooltip>
+    )
+
+}
 
 const Entretien = ({ currentData, setCurrentData, setVisible }) => {
     // Initialisation des options d'entretien en fonction du plan d'entretien choisi par l'utilisateur
@@ -101,7 +132,12 @@ const Entretien = ({ currentData, setCurrentData, setVisible }) => {
 
             <h3>Options d'entretien</h3>
             <StyledFormControl component="fieldset">
-                <FormLabel component="legend">Fauchage différencié</FormLabel>
+                <FormLabel component="legend">
+                    <Tip>
+                        Le <strong>fauchage différencié</strong> consiste à ne pas faucher de manière systématique l’ensemble de la végétation mais de s’adapter aux besoins du terrain en termes de sécurité.
+                    </Tip>
+                    Fauchage différencié
+                </FormLabel>
                 <StyledRadioGroup
                     aria-label="Options"
                     name="fauchage_differencie"
@@ -112,7 +148,12 @@ const Entretien = ({ currentData, setCurrentData, setVisible }) => {
                     <FormControlLabel value="non" control={<Radio />} label="Non" />
                 </StyledRadioGroup>
 
-                <FormLabel component="legend">Lutte contre les plantes invasives</FormLabel>
+                <FormLabel component="legend">
+                    <Tip>
+                        La <strong>lutte contre les plantes invasives</strong> consiste en la réalisation d’actions spécifiques visant à limiter la propagation ou à éradiquer certaines espèces végétales envahissantes comme la renouée du Japon ou l’ambroisie.
+                    </Tip>
+                    Lutte contre les plantes invasives
+                </FormLabel>
                 <StyledRadioGroup
                     aria-label="Options"
                     name="lutte_plantes_invasives"
@@ -123,26 +164,56 @@ const Entretien = ({ currentData, setCurrentData, setVisible }) => {
                     <FormControlLabel value="non" control={<Radio />} label="Non" />
                 </StyledRadioGroup>
 
-                <FormLabel component="legend">Hauteur de fauche (cm)</FormLabel>
+                <FormLabel component="legend">
+                    <Tip>
+                    La <strong>hauteur de fauche</strong> correspond à la hauteur à laquelle sont réglés les outils de fauchage et donc à la hauteur de la végétation une fois la fauche réalisée.
+                    </Tip>
+                    Hauteur de fauche (cm)
+                </FormLabel>
                 <SliderTextFieldFormHauteurFauche id="slider6" onChange={modifHauteurFauche} currentData={currentData} />
 
             </StyledFormControl>
 
             <h3 component="legend">Type de fauchage</h3>
             <StyledFormControl component="fieldset">
-                <FormLabel component="legend">Fauchage classique (en %)</FormLabel>
+                <FormLabel component="legend">
+                    <Tip>
+                        Le <strong>fauchage classique</strong> correspond à un fauchage réalisé avec des outils standards qui broient la végétation et la laisse sur place.
+                    </Tip>
+                    Fauchage classique (en %)
+                </FormLabel>
                 <SliderTextFieldForm id="slider1" onChange={handleSliderChange} currentData={currentData} />
-                <FormLabel component="legend">Fauchage avec collecte (en %)</FormLabel>
+                <FormLabel component="legend">
+                    <Tip>
+                        Le <strong>fauchage avec collecte</strong> correspond à un fauchage réalisé avec des outils dédiés à la collecte, la végétation est broyée et aspirée. La végétation aspirée est stockée dans un caisson à l’arrière du véhicule porteur.
+                    </Tip>
+                    Fauchage avec collecte (en %)
+                </FormLabel>
                 <SliderTextFieldForm id="slider2" onChange={handleSliderChange} currentData={currentData} />
-                <FormLabel component="legend">Fauchage en damier (en %)</FormLabel>
+                <FormLabel component="legend">
+                    <Tip>
+                    Le <strong>fauchage en damier</strong> correspond à un fauchage réalisé avec des outils standards qui broient la végétation et la laisse sur place. La différence avec le fauchage classique réside dans l’alternance entre des zones fauchées et des zones non fauchées.
+                    </Tip>
+                    Fauchage en damier (en %)
+                </FormLabel>
                 <SliderTextFieldForm id="slider3" onChange={handleSliderChange} currentData={currentData} />
             </StyledFormControl>
 
             <h3>Valorisation de l'herbe</h3>
             <StyledFormControl component="fieldset">
-                <FormLabel component="legend">Méthanisation (en %)</FormLabel>
+                <FormLabel component="legend">
+                    <Tip>
+                        La biomasse collectée peut être utilisée en <strong>méthanisation</strong> afin de produire du biogaz.
+                    </Tip>
+                    Méthanisation (en %)
+                </FormLabel>
                 <SliderTextFieldForm id="slider4" onChange={handleSliderChange} currentData={currentData} />
-                <FormLabel component="legend">Compostage (en %)</FormLabel>
+                <FormLabel component="legend">
+                    <Tip>
+                        La biomasse collectée peut être utilisée en <strong>compostage</strong> afin de produire du compost.
+                    </Tip>
+                    Compostage (en %)
+                </FormLabel>
                 <SliderTextFieldForm id="slider5" onChange={handleSliderChange} currentData={currentData} />
             </StyledFormControl>
 
