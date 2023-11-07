@@ -78,6 +78,12 @@ const SliderTextFieldForm = ({ id, onChange, currentData }) => {
         } 
       }
     }
+
+    if (['slider4', 'slider5'].includes(id)) {
+      let other = id === 'slider4' ? 'slider5' : 'slider4'
+      updatedValues[id] = newValue
+      updatedValues[other] = Math.min(100-newValue, updatedValues[other] )
+    }
     return updatedValues
   }
 
