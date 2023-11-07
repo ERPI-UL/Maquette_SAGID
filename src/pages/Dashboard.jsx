@@ -1,5 +1,7 @@
 // Import React and necessary components and libraries
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { Modal, Typography } from "@mui/material";
+import { Paper } from "@mui/material";
 import Box from "../components/box/Box";
 import DashboardWrapper, {
   DashboardWrapperMain,
@@ -65,6 +67,18 @@ const StyledTab = styled(Tab)(({ theme }) => ({
   },
 }));
 
+const modalStyle = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 400,
+  bgcolor: 'background.paper',
+  border: '2px solid #000',
+  boxShadow: 24,
+  p: 4,
+};
+
 const Dashboard = ({ currentData, setCurrentData }) => {
   // Define state variables using the useState hook
   const [visible, setVisible] = useState(false); // For controlling visibility
@@ -75,9 +89,26 @@ const Dashboard = ({ currentData, setCurrentData }) => {
   const handleTabChange = (event, newValue) => {
     setSelectedTab(newValue);
   };
+  // Modal handling
+  const [modalOpen, setModalOpen] = React.useState(true);
 
   return (
     <div className="dashboardwrapper">
+    <Modal
+      open={modalOpen}
+      onClose={() => setModalOpen(false)}
+      aria-labelledby="modal-modal-title"
+      aria-describedby="modal-modal-description"
+    >
+      <Paper sx={modalStyle}>
+        <Typography id="modal-modal-title" variant="h6" component="h2">
+          Page des résultats
+        </Typography>
+        <Typography id="modal-modal-description" sx={{ mt: 2 }} paragraph={true} align="justify">
+        Vous arrivez maintenant sur la page des résultats. Vous pouvez toujours modifier les paramètres d’entretien dans l’onglet à droite. Vous pouvez également changer la visualisation des résultats grâce aux onglets en haut à gauche.
+        </Typography>
+      </Paper>
+    </Modal>
       <DashboardWrapper>
         <DashboardWrapperMain>
           <div className="row">
