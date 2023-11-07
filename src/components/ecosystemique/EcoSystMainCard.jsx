@@ -6,6 +6,7 @@ import {
 import Box from "../box/Box";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInfoCircle, faLeaf } from "@fortawesome/free-solid-svg-icons";
+import { Tip } from "../../form/Entretien.jsx"
 
 import "./ecosystemique.scss";
 
@@ -30,10 +31,7 @@ const EcoSystMainCard = ({ currentData, visible }) => {
               ))}
               </div>
             </Box>
-            <div className="tooltip-container">
-              <h3>Indicateurs écosystémiques <FontAwesomeIcon icon={faInfoCircle}></FontAwesomeIcon> </h3>
-              <span className="tooltip">Cliquer sur chaque indicateur pour obtenir plus d'informations ! </span>
-            </div>
+            <h3><Tip>Cliquer sur chaque indicateur pour obtenir plus d'informations !</Tip>Indicateurs écosystémiques</h3>
             <Box>
               <div className="row">
                 {currentData.indicateurs_ecosysteme.map((item, index) => (

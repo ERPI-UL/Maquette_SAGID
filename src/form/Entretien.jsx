@@ -237,4 +237,5 @@ const Entretien = ({ currentData, setCurrentData, setVisible }) => {
     );
 };
 
+export { Tip };
 export default Entretien;
