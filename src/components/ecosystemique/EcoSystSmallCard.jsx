@@ -18,10 +18,9 @@ const EcoSystSmallCard = ({ currentData }) => {
             <h3>Bilan Global</h3>
             <Box>
               <div className="row">
-              {currentData.notes_ecosysteme.map((item, index) => (
+              {currentData.notes_ecosysteme.filter((item, index) => (item.display_on_charts)).map((item, index) => (
                 <div key={`summary-${index}`}
                   className="col-6 col-md-6 col-sm-12"
-                  hidden={ index ===0 } // TODO : suppress as soon as we want to disply this indicator
                 >
                   <SummaryBoxIndicateurs item={item} />
                 </div>
