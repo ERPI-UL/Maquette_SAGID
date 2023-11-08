@@ -1,5 +1,5 @@
 // Import React and necessary components and libraries
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Modal, Typography } from "@mui/material";
 import { Paper } from "@mui/material";
 import Box from "../components/box/Box";

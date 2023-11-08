@@ -103,7 +103,7 @@ export const SummaryBoxIndicateursLogo = ({ item, currentData, index, visible })
                   <sup> + {item.value - item.value_saved} </sup>
                 </div>
               }
-              { visible && item.value == item.value_saved &&
+              { visible && item.value === item.value_saved &&
                 <div className="summary-box__info__indicateur__value__indicator">
                   =
                 </div>

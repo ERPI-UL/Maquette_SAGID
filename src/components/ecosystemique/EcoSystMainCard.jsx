@@ -5,7 +5,7 @@ import {
 } from "../summary-box/SummaryBox";
 import Box from "../box/Box";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faInfoCircle, faLeaf } from "@fortawesome/free-solid-svg-icons";
+import { faLeaf } from "@fortawesome/free-solid-svg-icons";
 import { Tip } from "../../form/Entretien.jsx"
 
 import "./ecosystemique.scss";

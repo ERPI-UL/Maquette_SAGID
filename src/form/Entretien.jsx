@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FormControl, FormControlLabel, Radio, RadioGroup, Button, Typography, Paper } from '@mui/material';
+import { FormControl, FormControlLabel, Radio, RadioGroup, Button, Typography } from '@mui/material';
 import Tooltip, { tooltipClasses } from '@mui/material/Tooltip';
 import InfoIcon from '@mui/icons-material/Info';
 import FormLabel from '@mui/material/FormLabel';
