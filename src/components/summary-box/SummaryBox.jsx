@@ -181,7 +181,7 @@ export const SummaryBoxNotesGes = ({ item, visible }) => {
     value_sum_saved += item[i].value_saved;
     value_sum += item[i].value;
   }
-
+console.log(item)
   percent = Math.round((value_sum - value_sum_saved) / value_sum_saved * 100);
 
   return (
@@ -189,30 +189,29 @@ export const SummaryBoxNotesGes = ({ item, visible }) => {
       <div className="summary-box">
         <div className="summary-box__info__indicateur">
           <div className="summary-box__info__indicateur__title">
-            {item[0].value} {item[0].unit} <br />
+            {item[1].value} {item[1].unit} <br />
             {value_sum_saved < value_sum ? ( visible &&
-          <>
-            <FontAwesomeIcon icon={faArrowUpLong} bounce style={{ color: "#ff0000" }} />
-            <sup> + {percent} % </sup>
-          </>
-        ) : value_sum_saved > value_sum ? ( visible &&
-          <>
-            <FontAwesomeIcon icon={faArrowDown} bounce style={{ color: "#00ff00" }} />
-            <sup> {percent} % </sup>
-          </>
-        ) : ( visible &&
-          // Display an arrow to the right when item.value_after equals item.value
-          <>
-            {/* <FontAwesomeIcon icon={faArrowRight} bounce style={{ color: "#0000ff" }} />
-            <sup> 0 %</sup> */}
-          </>
-        )}
-
-          </div>
-          <div className="summary-box__info__indicateur__value">
+              <>
+                <FontAwesomeIcon icon={faArrowUpLong} bounce style={{ color: "#ff0000" }} />
+                <sup> + {percent} % </sup>
+              </>
+            ) : value_sum_saved > value_sum ? ( visible &&
+              <>
+                <FontAwesomeIcon icon={faArrowDown} bounce style={{ color: "#00ff00" }} />
+                <sup> {percent} % </sup>
+              </>
+            ) : ( visible &&
+              // Display an arrow to the right when item.value_after equals item.value
+              <>
+                {/* <FontAwesomeIcon icon={faArrowRight} bounce style={{ color: "#0000ff" }} />
+                <sup> 0 %</sup> */}
+              </>
+            )}
+            <Typography variant="h6" gutterBottom> 
             {item[0].title} 
+            </Typography>
             <Typography variant="body2" gutterBottom> 
-            {item[0].subtitle} {item[0].value} {item[0].subtitle_2}
+            {item[0].subtitle} <strong>{item[0].value} {item[0].subtitle_2}</strong>
             </Typography>
           </div>
         </div>
