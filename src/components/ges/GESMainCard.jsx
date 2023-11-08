@@ -6,9 +6,6 @@ import { faSmog } from '@fortawesome/free-solid-svg-icons'
 import "./ges.scss";
 
 const GESMainCard = ( {currentData, visible} ) => {
-
-  console.log(currentData)
-
   return (
     <div className="ges">
       <FontAwesomeIcon icon={faSmog} />
