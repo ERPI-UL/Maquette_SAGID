@@ -27,7 +27,7 @@ const EcoSystMainCard = ({ currentData, visible }) => {
                 <div key={`summary-${index}`}
                   className="col-6 col-md-6 col-sm-12"
                 >
-                    <SummaryBoxIndicateursLogo item={item} currentData={currentData} index={index} visible={visible}/>
+                    <SummaryBoxIndicateursLogo item={item} currentData={currentData} index={index} visible={visible} displayModal={false}/>
                 </div>
               ))}
               </div>
@@ -40,7 +40,7 @@ const EcoSystMainCard = ({ currentData, visible }) => {
                     key={`summary-${index}`}
                     className="col-3 col-md-6 col-sm-12"
                   >
-                    <SummaryBoxIndicateursLogo item={item} currentData={currentData} index={index} visible={visible}/>
+                    <SummaryBoxIndicateursLogo item={item} currentData={currentData} index={index} visible={visible} displayModal={true}/>
                   </div>
                 ))}
               </div>

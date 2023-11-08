@@ -18,16 +18,14 @@ import {
 } from "chart.js";
 
 import CircleBox from "./CircleBox";
-import { Button } from "@mui/material";
-
-import InfoCard from './InfoCard';
+import { Button, Modal } from "@mui/material";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faArrowDown, faArrowUpLong} from "@fortawesome/free-solid-svg-icons";
 
 import { useState } from 'react';
 
-import { Typography } from "@mui/material";
+import { Typography, Paper } from "@mui/material";
 
 ChartJS.register(
   CategoryScale,
@@ -79,7 +77,21 @@ export const SummaryBoxIndicateurs = ({ item }) => {
   );
 };
 
-export const SummaryBoxIndicateursLogo = ({ item, currentData, index, visible }) => {
+const modalStyle = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 600,
+  p: 4,
+  border: '6px solid rgba(97, 97, 97, 0.9)',
+  boxShadow: '0px 8px 24px rgba(149, 157, 165, 0.2)',
+  borderRadius: '8px',
+  bgcolor: '#f5f5f9',
+  color: 'rgba(0, 0, 0, 0.87)'
+};
+
+export const SummaryBoxIndicateursLogo = ({ item, currentData, index, visible, displayModal}) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
@@ -111,15 +123,25 @@ export const SummaryBoxIndicateursLogo = ({ item, currentData, index, visible })
           </div>
           <span className="hover-text">{item.title}</span>
         </div>
-      </div>  
-      {isModalOpen && (
-        <InfoCard
-          title={item.title}
-          text={item.text}
-          list={item.analyse}
-          advice={item.advices}
-          onClose={toggleModal}
-        />
+      </div>
+      { displayModal && (
+        <Modal
+          open={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+        >
+          <Paper sx={modalStyle}>
+            <Typography variant="h3">{item.title}</Typography>
+            <Typography align="justify" gutterBottom={true}>{item.text}</Typography>
+            <Typography variant="h4">Comment analyser la valeur ?</Typography>
+            <ul>
+              <li> <Typography align="justify">- <strong>Score 4 ou 5 :</strong> {item.analyse["good"]}</Typography></li>
+              <li> <Typography align="justify">- <strong>Score de 3 :</strong> {item.analyse["medium"]}</Typography></li>
+              <li> <Typography align="justify" gutterBottom={true}>- <strong>Score de 1 ou 2 :</strong> {item.analyse["bad"]}</Typography></li>
+            </ul>
+            <Typography variant="h4">Comment améliorer la valeur ?</Typography>
+            <Typography align="justify">{item.advices}</Typography>
+          </Paper>
+        </Modal>
       )}
     </div>
   );
@@ -181,7 +203,7 @@ export const SummaryBoxNotesGes = ({ item, visible }) => {
     value_sum_saved += item[i].value_saved;
     value_sum += item[i].value;
   }
-console.log(item)
+
   percent = Math.round((value_sum - value_sum_saved) / value_sum_saved * 100);
 
   return (

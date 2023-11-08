@@ -73,10 +73,12 @@ const modalStyle = {
   left: '50%',
   transform: 'translate(-50%, -50%)',
   width: 400,
-  bgcolor: 'background.paper',
-  border: '2px solid #000',
-  boxShadow: 24,
   p: 4,
+  border: '6px solid rgba(97, 97, 97, 0.9)',
+  boxShadow: '0px 8px 24px rgba(149, 157, 165, 0.2)',
+  borderRadius: '8px',
+  bgcolor: '#f5f5f9',
+  color: 'rgba(0, 0, 0, 0.87)'
 };
 
 const Dashboard = ({ currentData, setCurrentData }) => {
@@ -97,8 +99,6 @@ const Dashboard = ({ currentData, setCurrentData }) => {
     <Modal
       open={modalOpen}
       onClose={() => setModalOpen(false)}
-      aria-labelledby="modal-modal-title"
-      aria-describedby="modal-modal-description"
     >
       <Paper sx={modalStyle}>
         <Typography id="modal-modal-title" variant="h6" component="h2">
