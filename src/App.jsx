@@ -18,16 +18,16 @@ function App() {
 
     const getDashboardElement = () => {
         if (!currentData.territoire) { return <Navigate replace to="/"/> }
-        if (!currentData.planEntretien) { return <Navigate replace to="/"/> }
+        if (!currentData.planEntretien) { return <Navigate replace to="/plan-entretien"/> }
         return <Dashboard currentData={currentData} setCurrentData={setCurrentData}/>
     }
 
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="" element={<MainLayout />}>
+                <Route path="" element={<MainLayout currentData={currentData}/>}>
                     <Route index element={<ChoixTerritoire currentData={currentData}
-                        setCurrentData={setCurrentData} redirect={"/plan-entretien"} /> } />
+                        setCurrentData={setCurrentData} redirect={"/dashboard"} /> } />
                     <Route path="plan-entretien" element={<ChoixPlanEntretien currentData={currentData}
                         setCurrentData={setCurrentData} redirect={"/dashboard"}/>} />
                     <Route path="dashboard" element={getDashboardElement()} />
