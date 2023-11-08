@@ -54,7 +54,7 @@ const getColorForValue = (value) => {
 const MyComponent = ({item}) => {
   return (
     <Box>
-        <CircleBox value={item.value}> {item.value} </CircleBox>
+        <CircleBox sx={{ marginLeft:"auto", marginRight:"auto" }} value={item.value}> {item.value} </CircleBox>
     </Box>
     );
 };
