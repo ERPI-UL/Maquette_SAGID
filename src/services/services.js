@@ -103,7 +103,7 @@ const compute_kpi = function (currentData) {
     co2EviteMetha = quantiteHerbeCollecte * methanisation * co2EviteMethaTonne;
     co2EviteCompostage = quantiteEngraisProduite * compostage * co2EviteCompostageTonne;
     co2EviteValo = co2EviteMetha + co2EviteCompostage;
-
+    
     /*************************************************************/
     /* Calcul des coefficients                                   */
     /*************************************************************/
