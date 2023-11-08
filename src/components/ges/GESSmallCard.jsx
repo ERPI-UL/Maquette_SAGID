@@ -8,10 +8,10 @@ import "./ges.scss";
 const GESSmallCard = ( {currentData, visible} ) => {
   return (
     <div className="ges">
-      <FontAwesomeIcon icon={faSmog}/>
-      <h3>Aspect émission de GES</h3>
+      
+      <h3><FontAwesomeIcon icon={faSmog}/> Aspect émission de GES</h3>
+      <h3>Bilan Global</h3>
       <div className="row">
-        <h3>Bilan Global</h3>
         <div className="col-12 col-md-12">
           <div className="row">
           <div className="col-6 hide-md">

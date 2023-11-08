@@ -10,10 +10,9 @@ const EcoNomiqueSmallCard = ({ currentData, visible }) => {
   return (
     <div className="economique">
       {/* Render a FontAwesomeIcon with the Euro sign */}
-      <FontAwesomeIcon icon={faEuroSign}/>
-      <h3>Aspect économique</h3>
+      <h3><FontAwesomeIcon icon={faEuroSign}/> Aspect économique</h3>
+      <h3>Bilan Global</h3>
       <div className="row">
-        <h3>Bilan Global</h3>
         <div className="col-12 col-md-12">
           <div className="row">
             <div className="col-6 hide-md">
